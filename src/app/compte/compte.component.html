@@ -1,0 +1,166 @@
+
+ <!-- Profile widget --> 
+ 
+ <div style="text-align: right;  height: 30px;width: 30px;">
+  <button (click)="setLangueArabe()" style="background-color: rgb(255, 255, 255);border-color: aliceblue;" type="button"> 
+<img src="https://cdn-icons-png.flaticon.com/512/4855/4855834.png"[height]="20" alt="Arabe">
+</button>
+<button (click)="setLangueFrancais()"  style="background-color: rgb(255, 255, 255);border-color: aliceblue;" type="button">
+<img src="https://cdn-icons-png.flaticon.com/512/5315/5315693.png"[height]="20" alt=""></button>
+<button (click)="setlangueAnglais()" style="background-color: rgb(255, 254, 254);border-color: aliceblue;" type="button">
+<img src="https://as2.ftcdn.net/v2/jpg/00/95/45/61/1000_F_95456103_ZAkq44OVLaX7zHS37aOZumekTyu8RrSq.jpg" height="20" alt=""></button>        
+</div>
+<div class="row py-5 px-4">
+  <div class="col-md-5 mx-auto">
+ 
+     <div class="px-4 pt-0 pb-4 cover"> 
+         <div class="media align-items-end profile-head"> 
+         <div class="profile mr-3">
+          <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="..." width="130" class="rounded mb-2 img-thumbnail">
+          <br>
+         
+         </div> 
+         
+         <div class="media-body mb-5 text-white">
+              <h4 class="mt-0 mb-0" *ngFor="let profil of profil"> <b>{{this.profil.nomprofil}}</b> <br> <b>{{this.profil.prenomprofil}}</b></h4>
+               <p class="small mb-4"> <i class="fas fa-map-marker-alt mr-2"></i></p> 
+             </div> </div> </div>
+              <div class="bg-light p-4 d-flex justify-content-end text-center">
+                   </div> 
+<br>
+<button type="button" class="btn btn-outline-success"style="margin-left: 10px;padding-left:10px;padding-right:10px"routerLink="/modifier">Modifier Profile</button>
+<button type="button" class="btn btn-outline-danger" style="margin-left: 10px;padding-left:10px;padding-right:10px"routerLink="/ajouter">Ajouter informations</button>
+
+
+<div class="container">
+  <div class="card shadow mb-4">
+  <div class="card-body">
+  <table >
+  <thead>
+  <tr>
+  <th style="font-size: 30px;">{{textsection3.section3}}</th>
+  </tr>
+  </thead>
+
+ <tbody *ngFor="let profil of profil">
+  <tr><td> {{textsection4.section4}} : </td><td><b>{{this.profil.nomprofil}}</b></td></tr>
+  <tr><td>  {{textsection5.section5}} :</td><td><b>{{this.profil.prenomprofil}}</b></td></tr>
+  <tr><td> {{textsection6.section6}} :</td> <td> <b>{{this.profil.numtel}}</b></td>
+  <tr><td> {{textsection7.section7}} :</td> <td> <b>{{this.profil.email}}</b></td></tr>
+<br>   <tr> <td><a class="btn btn-success" [routerLink]="['/updateprofil',profil.nomprofil]">{{textsection8.section8}}</a></td> 
+ <td><a class="btn btn-success" [routerLink]="['/ajoutprofil',profil.nomprofil]">{{textsection9.section9}}</a></td> </tr>
+
+
+</tbody>
+  </table>
+  </div>
+  </div>
+  </div>
+
+  
+        
+        
+        <div class="py-4 px-4"> 
+                <div class="d-flex align-items-center justify-content-between mb-3"> 
+                 <h5 class="mb-0">
+                                                             
+                  </h5><a href="#" class="btn btn-link text-muted"></a> </div> 
+                    <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto">
+                     <div class="profile-tabs">
+                       <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+
+                                                                   
+                         <li class="nav-item"data-toggle="modal" data-target="#confirmer" style="color: black;"(click)="getHistorique()">
+                            <a class="nav-link active" href="#historique" role="tab" data-toggle="tab"style="margin-right: 5px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16" >
+                                   <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                   <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                                     </svg>
+                                 <br>{{textsection10.section10}}
+                                   </a>
+                                  </li>
+                                   <li class="nav-item" >
+                                    <a class="nav-link" href="#logOut" role="tab" data-toggle="tab" routerLink="/">
+                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+                                         <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+                                            </svg>                                    
+                                              <br> <button type="button" (click)="getdeconnect()">{{textsection11.section11}}</button> 
+                                      </a>
+                                      </li>
+                                                                    
+                                        </ul>
+                                         <br>
+                                         </div>
+                                         </div>
+                                        </div></div>
+
+
+
+
+
+
+  
+
+
+
+  <div class="modal fade" id="confirmer" tabindex="-1" role="dialog" aria-labelledby="confirmerLabel" aria-hidden="true">
+
+  <div  class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>{{textsection12.section12}}</th>
+                <th>{{textsection13.section13}}</th>
+                <th>{{textsection14.section14}}</th>
+                <th>{{textsection15.section15}}</th>
+                <th>{{textsection16.section16}}</th>
+                <th>{{textsection17.section17}}</th>
+                <th>{{textsection18.section18}}</th>
+              </tr>
+            </thead>
+            <tbody>
+     
+
+
+              <tr *ngFor="let ticket of tickets" >
+
+
+                <td scope="col"> {{ticket.num_ticket}}</td>
+                <td scope="col">{{ticket.date_print}}</td>
+                <td scope="col">{{ticket.heure_print}}</td>
+                <td scope="col">
+                  <span *ngIf="ticket.called ==0" class="badge badge-danger"> n'est pas servi
+                  </span>
+                  <span *ngIf="ticket.called ==1" class="badge badge-outline"> Entrain d'etre servi 
+                </span>
+                <span *ngIf="ticket.called==2" class="badge badge-primary"> Servi 
+                </span> 
+                </td>
+                <td scope="col">{{ticket.jour_semaine}}</td>
+                <td  scope="col">{{ticket.service}}</td>
+                <td  scope="col">{{ticket.nom_agence}}</td> 
+              </tr>
+
+          
+              <!-- Ajouter plus de lignes de données ici -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{textsection19.section19}}</button>
+      </div>
+    </div>
+  </div>
+  </div>

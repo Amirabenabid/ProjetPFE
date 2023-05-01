@@ -1,0 +1,2434 @@
+<!DOCTYPE html>
+	<html class="h-100" lang="fr" dir="ltr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#ffffff">
+	<meta name="msapplication-navbutton-color" content="#ffffff">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+	<style>
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #888;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: #2a6496;
+	}
+
+	.btn:focus,
+	.btn:active {
+		outline: none !important;
+		box-shadow: none;
+	}
+
+	.agencysearch {
+		background-color: #2a6496;
+
+	}
+
+	.btn-primary {
+		background-color: #2a6496;
+		border-color: #ffffff;
+		fill: #ffffff;
+	}
+
+	.btn-primary:hover,
+	.btn-primary:focus {
+		color: #000000;
+		fill: #000000;
+		background-color: #ffffff;
+		border-color: #2a6496;
+	}
+
+	.btn-cancel {
+		background-color: #660000;
+		color: #ffffff;
+		border-color: #ffffff;
+	}
+
+	.btn-cancel:hover,
+	.btn-cancel:focus {
+		color: #000000;
+		background-color: #ffffff;
+		border-color: #660000;
+	}
+
+	.btn-secondary,
+	.btn-secondary:hover,
+	.btn-secondary:focus {
+		background-color: transparent;
+		border-color: #2a6496;
+		color: #2a6496;
+	}
+
+	.btn-secondary.active {
+		color: #ffffff;
+		background-color: #2a6496;
+		border-color: #2a6496;
+
+	}
+
+	.btn.disabled,
+	.btn:disabled,
+	fieldset:disabled .btn {
+		color: #ffffff;
+		pointer-events: none;
+		background-color: #2a6496;
+		border-color: #ffffff;
+	}
+
+	.btn-outline-primary {
+		--bs-btn-color: #2a6496;
+		--bs-btn-border-color: #2a6496;
+		--bs-btn-hover-color: #fff;
+		--bs-btn-hover-bg: #2a6496;
+		--bs-btn-hover-border-color: #2a6496;
+		--bs-btn-active-color: #fff;
+		--bs-btn-active-bg: #2a6496;
+		--bs-btn-active-border-color: #2a6496;
+		--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+		--bs-btn-disabled-color: #2a6496;
+		--bs-btn-disabled-bg: transparent;
+		--bs-btn-disabled-border-color: #2a6496;
+		--bs-gradient: none;
+	}
+
+	.btn-check:checked+.btn,
+	.btn.active,
+	.btn.show,
+	.btn:first-child:active,
+	:not(.btn-check)+.btn:active {
+		color: #000000;
+		background-color: #ffffff;
+		border-color: #2a6496;
+	}
+
+	.popover-arrow {
+		display: none !important;
+	}
+
+	.card {
+		border-color: rgba(42,100,150,0.5);
+		background-color: #ffffff;
+	}
+
+	.card-header {
+		background-color: #2a6496;
+		color: #ffffff;
+	}
+
+	.card-footer {
+		background-color: rgba(42,100,150,0.5);
+		border-top: var(--bs-card-border-width) solid rgba(42,100,150,0.5);
+		color: #ffffff;
+	}
+
+	html,
+	body {
+		height: 100%;
+		overflow-x: hidden;
+		background-color: #ffffff;
+	}
+
+	main {
+		z-index: 1;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		height: 100%;
+	}
+
+	.accordion-body {
+		background-color: #ffffff;
+	}
+
+	.container,
+	.container-lg,
+	.container-md,
+	.container-sm,
+	.container-xl,
+	.container-xxl {
+		max-width: 100%;
+	}
+
+	.hidden {
+		display: none !important;
+	}
+
+	.sidebar {
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 300px;
+	}
+
+	.mainbg {
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.form-check {
+		display: flex;
+	}
+
+	.form-check-label {
+		align-self: center;
+		margin: 0 30px;
+	}
+
+	.form-check-input {
+		width: 1.5em;
+		height: 1.5em;
+	}
+
+	.btn-samesize {
+		height: 80px;
+		font-size: 1rem;
+	}
+
+	@media (min-width: 992px) {
+		.btn-samesize {
+			height: 80px;
+			font-weight: bold;
+			font-size: 1.35rem !important;
+		}
+	}
+
+	@media (min-width: 1360px) {
+		.btn-samesize {
+			height: 100px;
+			font-weight: bold;
+			font-size: 1.75rem !important;
+		}
+	}
+
+	@media (min-width: 1601px) {
+		.btn-samesize {
+			height: 120px;
+			font-weight: bold;
+			font-size: 2.2rem !important;
+		}
+	}
+
+	.btn-samesize-sm {
+		height: 60px;
+		width: 200px;
+		font-weight: bold;
+	}
+
+	.btn .badge {
+		position: unset;
+		top: 0;
+	}
+
+	.badge {
+		--bs-badge-padding-x: 0.8em;
+		--bs-badge-padding-y: 0.6em;
+		--bs-badge-font-size: 0.7em;
+	}
+
+	.badge-top {
+		margin-top: 4px;
+	}
+
+	.modal-content {
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.sidebar.paddingtop {
+		padding-top: 200px;
+	}
+
+	.sidebarlogo {
+		position: absolute;
+		bottom: 0;
+		padding-bottom: 20px;
+		padding-left: 45px;
+		padding-right: 45px;
+	}
+
+	.maincontainerbg {
+		height: 940px;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.bgContainer {
+		position: absolute;
+	}
+
+	.card-img-size {
+		max-height: 200px;
+		max-width: 200px
+	}
+
+	@media (min-width: 992px) {
+		.card-img-size {
+			max-height: 400px;
+			max-width: 400px
+		}
+	}
+
+	@media (min-width: 992px) {
+		.maincontainer {
+			width: calc(100% - 300px);
+			width: -webkit-calc(100% - 300px);
+			width: -moz-calc(100% - 300px);
+			overflow-y: auto;
+			height: 100%;
+		}
+	}
+
+	.maincontainer {
+		padding-left: 0;
+		padding-right: 0;
+		overflow-y: auto;
+		height: 100%;
+	}
+
+	.mmlogo {
+		padding-top: 240px;
+	}
+
+	.fullheight {
+		height: 1080px;
+	}
+
+	.d-flex>.btn {
+		margin-left: 10px;
+		font-weight: bold;
+	}
+
+	.form-signin {
+		width: 100%;
+		max-width: 900px;
+		padding: 15px;
+		margin: auto;
+	}
+
+	/*.modal-dialog {
+	max-width: 700px;
+}*/
+
+	.fieldsetwait {
+		display: inline-grid;
+		padding: 15px;
+		max-width: 300px;
+	}
+
+	.input-group-text {
+		background-color: #2a6496;
+		border-color: #2a6496;
+		color: #ffffff;
+	}
+
+	.soustitre1 {
+		background-color: #5aab40;
+		color: #161414;
+	}
+
+	.soustitre2 {
+		background-color: #8eb5fd;
+		color: #161414;
+	}
+
+	.soustitre3 {
+		background-color: #ff7a7a;
+		color: #161414;
+	}
+
+	.soustitre4 {
+		background-color: #9be185;
+		color: #161414;
+	}
+
+	.soustitre5 {
+		background-color: transparent;
+		color: #161414;
+	}
+
+	.form-check-input:checked {
+		background-color: #2a6496;
+		border-color: #2a6496;
+	}
+
+	.txtIG {
+		background-color: transparent;
+		color: #000000;
+	}
+
+	tr:last-child {
+		border-color: transparent;
+	}
+
+	.accordion {
+		--bs-accordion-bg: #2a6496;
+		--bs-accordion-active-bg: #2a6496;
+		--bs-accordion-active-color: #ffffff;
+		--bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+		--bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+
+	}
+
+	.bgpoly {
+		mask-image: -webkit-gradient(linear, left bottom, left center, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 1)));
+		-webkit-mask-image: -webkit-gradient(linear, left bottom, left center, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 1)));
+		position: fixed;
+
+		opacity: 0;
+		bottom: 0;
+	}
+
+	.gradienttrans {
+		animation: Animation 3s ease 0s 1 normal forwards;
+		-webkit-animation: Animation 3s ease 0s 1 normal forwards;
+
+	}
+
+	@keyframes Animation {
+		0% {
+			opacity: 0;
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+		}
+
+		82% {
+			opacity: 1;
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
+		}
+
+		84% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
+		}
+
+		86% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
+		}
+
+		88% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 9));
+		}
+
+		90% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 8));
+		}
+
+		92% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 7));
+		}
+
+		94% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.65));
+		}
+
+		96% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+		}
+
+		98% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.55));
+		}
+
+		100% {
+			opacity: 1;
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+		}
+	}
+
+	@-webkit-keyframes Animation {
+		0% {
+			opacity: 0;
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+		}
+
+		82% {
+			opacity: 1;
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
+		}
+
+		84% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
+		}
+
+		86% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
+		}
+
+		88% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 9));
+		}
+
+		90% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 8));
+		}
+
+		92% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 7));
+		}
+
+		94% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.65));
+		}
+
+		96% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+		}
+
+		98% {
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.55));
+		}
+
+		100% {
+			opacity: 1;
+			-webkit-mask-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+		}
+	}
+
+	@-webkit-keyframes fadein {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	@-moz-keyframes fadein {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes fadein {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	@-webkit-keyframes fadeinout {
+		0% {
+			opacity: 1;
+		}
+
+		50% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@-moz-keyframes fadeinout {
+		0% {
+			opacity: 1;
+		}
+
+		50% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes fadeinout {
+		0% {
+			opacity: 1;
+		}
+
+		50% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	.polyanim {
+		animation: fadeinout 12s ease 0s 1 normal forwards;
+		-webkit-animation: fadeinout 12s ease 0s 1 normal forwards;
+	}
+
+	.bgexpress {
+		animation: fadein 1s ease 0s 1 normal forwards;
+		-webkit-animation: fadein 1s ease 0s 1 normal forwards;
+	}
+
+	@media (max-width: 767px) {
+		.bgexpress-sm {
+			display: unset;
+		}
+
+		.bgexpress-md {
+			display: none;
+		}
+	}
+
+	@media (min-width: 768px) {
+
+		.bgexpress-md {
+			display: unset;
+		}
+
+		.bgexpress-sm {
+			display: none;
+		}
+	}
+
+	.navexpress {
+		opacity: 0;
+		animation: fadein 1s ease 3s 1 normal forwards;
+		-webkit-animation: fadein 1s ease 3s 1 normal forwards;
+	}
+
+	.btn {
+		--bs-btn-border-radius: 9999px;
+	}
+
+	.btn-group-lg>.btn,
+	.btn-lg {
+		--bs-btn-border-radius: 9999px;
+	}
+
+	.form-control {
+		padding: 0.75rem 0.75rem;
+		border-color: rgba(42,100,150,0.5);
+		border-radius: 10rem;
+	}
+
+	.list-group {
+		--bs-list-group-color: #212529;
+		--bs-list-group-bg: #fff;
+		--bs-list-group-border-color: #2a6496;
+		--bs-list-group-border-width: 2px;
+		--bs-list-group-border-radius: 1rem;
+	}
+
+	.list-group {
+		--bs-list-group-active-bg: #2a6496;
+		--bs-list-group-active-border-color: #2a6496;
+	}
+
+	.bg-secondary {
+		background-color: #ff1b73 !important;
+	}
+
+	@media (max-width: 1199px) {
+		.map {
+			position: sticky !important;
+			height: 25vh;
+		}
+
+		.vh-lg-100 {
+			height: 25vh !important;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.map {
+			width: 100%;
+			height: 100%;
+		}
+
+		.vh-lg-100 {
+			height: 100vh !important;
+		}
+	}
+
+	@media (max-width: 1199px) {
+		.logo {
+			display: none !important;
+		}
+	}
+
+	.list-group-item.disabled,
+	.list-group-item:disabled {
+		background-color: rgba(200, 0, 0, .1);
+	}
+
+	.list-group-item.available {
+		background-color: rgba(0, 200, 0, .1);
+	}
+
+	.list-group-item:last-child {
+		border-bottom-left-radius: 1rem;
+		border-bottom-right-radius: 1rem;
+	}
+
+	.hoverable {
+		cursor: pointer;
+		transition: transform .3s;
+	}
+
+	.hoverable:hover {
+		transform: scale(0.95);
+	}
+
+	.btnBack {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		z-index: 1030;
+		width: 60px;
+		height: 60px;
+		margin: 24px;
+		border-radius: 50%;
+		text-align: center;
+		border-color: transparent;
+		padding: 0 !important;
+		box-shadow: 0px 0px 20px #888;
+	}
+
+	.shadow-it {
+		box-shadow: 0px 0px 20px #888;
+	}
+
+	.btnProfile {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		z-index: 1030;
+		width: 60px;
+		height: 60px;
+		margin: 24px;
+		border-radius: 50%;
+		text-align: center;
+		border-color: transparent;
+		padding: 0 !important;
+		animation: load 1.5s ease-out 1;
+	}
+
+	@keyframes load {
+		0% {
+			border: 0px solid #222;
+		}
+
+		50% {
+			border: 16px solid #222;
+		}
+
+		100% {
+			border: 0px solid #222;
+		}
+	}
+
+	.btnConfirmRDV {
+		cursor: pointer;
+	}
+
+	.color-primary {
+		color: #2a6496;
+		fill: #2a6496;
+	}
+
+	.color-secondary {
+		color: #f39800;
+		fill: #f39800;
+	}
+
+	.reservations {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+		z-index: 12;
+		background-color: #ffffff;
+	}
+
+	.bg-purple {
+		background-color: #6f42c1;
+	}
+
+	.otpAlertPlaceholder {
+		position: fixed;
+		top: 30px;
+		right: 30px;
+		z-index: 2022;
+	}
+
+	@media (min-width: 1360px) {
+		.col-xls-6 {
+			flex: 0 0 auto;
+			width: 46.333%;
+		}
+	}
+
+	@media (min-width: 1601px) {
+		.col-xxls-6 {
+			flex: 0 0 auto;
+			width: 47%;
+		}
+	}
+
+	@media (min-width: 1919px) {
+		.col-xxls-6 {
+			flex: 0 0 auto;
+			width: 47.5%;
+		}
+	}
+
+	.cocoon {
+		position: fixed;
+
+		height: 100%;
+		width: 100%;
+		background-color: transparent;
+		z-index: 2050;
+	}
+
+
+	@media (min-width: 992px) {
+		.modal-fs-half {
+			width: 50vw;
+		}
+	}
+
+	.enctrans {
+		fill: transparent
+	}
+
+	.vh-100 {
+		height: 100vh !important;
+	}
+
+	.btn-group>.btn:last-child[dir="rtl"] {
+		border-top-left-radius: 9999px;
+		border-bottom-left-radius: 9999px;
+	}
+
+	.btn-group>.btn:first-child[dir="rtl"] {
+		border-top-right-radius: 9999px !important;
+		border-bottom-right-radius: 9999px !important;
+	}
+
+	@media (min-width: 992px) {
+		.d-revert {
+			display: revert !important;
+		}
+	}
+</style></head>
+
+<body class="d-flex h-100">
+	<div class="cocoon d-none"></div>
+	<svg id="bgpoly" class="bgpoly" version="1.1" viewBox="0 0 16276 9164" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<style type="text/css">
+			.str0 {
+			stroke:#FEFEFE;
+			stroke-width:20
+			}
+			.fil0 {
+			fill:none
+			}
+			.fil29 {
+			fill:#0BA44A;
+			fill-rule:nonzero
+			}
+			.fil8 {
+			fill:#187D46;
+			fill-rule:nonzero
+			}
+			.fil9 {
+			fill:#1C6437;
+			fill-rule:nonzero
+			}
+			.fil4 {
+			fill:#205194;
+			fill-rule:nonzero
+			}
+			.fil6 {
+			fill:#2F3659;
+			fill-rule:nonzero
+			}
+			.fil2 {
+			fill:#2F3F6F;
+			fill-rule:nonzero
+			}
+			.fil5 {
+			fill:#2F98D4;
+			fill-rule:nonzero
+			}
+			.fil33 {
+			fill:#31BEEF;
+			fill-rule:nonzero
+			}
+			.fil43 {
+			fill:#414D7F;
+			fill-rule:nonzero
+			}
+			.fil42 {
+			fill:#436B58;
+			fill-rule:nonzero
+			}
+			.fil7 {
+			fill:#45B4E7;
+			fill-rule:nonzero
+			}
+			.fil36 {
+			fill:#475FA7;
+			fill-rule:nonzero
+			}
+			.fil32 {
+			fill:#5069AF;
+			fill-rule:nonzero
+			}
+			.fil21 {
+			fill:#64272A;
+			fill-rule:nonzero
+			}
+			.fil13 {
+			fill:#67B439;
+			fill-rule:nonzero
+			}
+			.fil22 {
+			fill:#6B2641;
+			fill-rule:nonzero
+			}
+			.fil34 {
+			fill:#6EC8E2;
+			fill-rule:nonzero
+			}
+			.fil25 {
+			fill:#742724;
+			fill-rule:nonzero
+			}
+			.fil28 {
+			fill:#7CBA3B;
+			fill-rule:nonzero
+			}
+			.fil23 {
+			fill:#84294F;
+			fill-rule:nonzero
+			}
+			.fil20 {
+			fill:#87272D;
+			fill-rule:nonzero
+			}
+			.fil12 {
+			fill:#98C03A;
+			fill-rule:nonzero
+			}
+			.fil41 {
+			fill:#AD434A;
+			fill-rule:nonzero
+			}
+			.fil19 {
+			fill:#B82B2E;
+			fill-rule:nonzero
+			}
+			.fil11 {
+			fill:#BCCF1F;
+			fill-rule:nonzero
+			}
+			.fil24 {
+			fill:#C12668;
+			fill-rule:nonzero
+			}
+			.fil30 {
+			fill:#CCCBCA;
+			fill-rule:nonzero
+			}
+			.fil40 {
+			fill:#D63136;
+			fill-rule:nonzero
+			}
+			.fil37 {
+			fill:#D7D900;
+			fill-rule:nonzero
+			}
+			.fil3 {
+			fill:#DBDADB;
+			fill-rule:nonzero
+			}
+			.fil16 {
+			fill:#E1252A;
+			fill-rule:nonzero
+			}
+			.fil27 {
+			fill:#E4E2E4;
+			fill-rule:nonzero
+			}
+			.fil26 {
+			fill:#E6353F;
+			fill-rule:nonzero
+			}
+			.fil14 {
+			fill:#E84F29;
+			fill-rule:nonzero
+			}
+			.fil17 {
+			fill:#EA7E1F;
+			fill-rule:nonzero
+			}
+			.fil35 {
+			fill:#EB5F3F;
+			fill-rule:nonzero
+			}
+			.fil15 {
+			fill:#EC692C;
+			fill-rule:nonzero
+			}
+			.fil31 {
+			fill:#EDEDEF;
+			fill-rule:nonzero
+			}
+			.fil38 {
+			fill:#F18C36;
+			fill-rule:nonzero
+			}
+			.fil10 {
+			fill:#F5BB1B;
+			fill-rule:nonzero
+			}
+			.fil18 {
+			fill:#F6A420;
+			fill-rule:nonzero
+			}
+			.fil39 {
+			fill:#F8B86C;
+			fill-rule:nonzero
+			}
+			.fil1 {
+			fill:#2F3F70;
+			fill-rule:nonzero
+			}</style>
+	</defs>
+	<polygon class="poly1001 d-none polygone fil26" points="16083 9154 16266 9e3 16266 9154" />
+	<polygon class="poly1002 d-none polygone fil27" points="16266 8151 16020 7940 16020 8363" />
+	<polygon class="poly1003 d-none polygone fil28" points="16020 8786 16266 8574 16266 9e3" />
+	<polygon class="poly1004 d-none polygone fil29" points="16266 8574 16020 8363 16020 8786" />
+	<polygon class="poly1005 d-none polygone fil30" points="16020 8363 16266 8151 16266 8574" />
+	<polygon class="poly1006 d-none polygone fil26" points="12501 9154 12323 9e3 12323 9154" />
+	<polygon class="poly1007 d-none polygone fil27" points="12323 8155 12570 7944 12570 8367" />
+	<polygon class="poly1008 d-none polygone fil28" points="12570 8790 12323 8578 12323 9e3" />
+	<polygon class="poly1009 d-none polygone fil31" points="12206 8478 12206 8678 12323 8578" />
+	<polygon class="poly1010 d-none polygone fil32" points="12323 8578 12570 8367 12570 8790" />
+	<polygon class="poly1011 d-none polygone fil30" points="12570 8367 12323 8155 12323 8578" />
+	<polygon class="poly1012 d-none polygone fil32" points="13131 9154 13309 9154 13309 9e3" />
+	<polygon class="poly1013 d-none polygone fil33" points="13062 8790 13309 9e3 13309 8578" />
+	<polygon class="poly1014 d-none polygone fil34" points="13062 8790 13309 9e3 13131 9154 13062 9154" />
+	<polygon class="poly1015 d-none polygone fil35" points="13062 8367 13309 8578 13309 8155" />
+	<polygon class="poly1016 d-none polygone fil32" points="12994 9154 12816 9e3 12816 9154" />
+	<polygon class="poly1017 d-none polygone fil36" points="12638 9154 12816 9e3 12816 9154" />
+	<polygon class="poly1018 d-none polygone fil37" points="13062 8790 12816 8578 12816 9e3" />
+	<polygon class="poly1019 d-none polygone fil27" points="12816 8155 12570 7944 12570 8367" />
+	<polygon class="poly1020 d-none polygone fil28" points="12570 8790 12816 8578 12816 9e3" />
+	<polygon class="poly1021 d-none polygone fil31" points="12816 8578 13062 8367 13062 8790" />
+	<polygon class="poly1022 d-none polygone fil29" points="12816 8578 12570 8367 12570 8790" />
+	<polygon class="poly1023 d-none polygone fil30" points="12570 8367 12816 8155 12816 8578" />
+	<polygon class="poly1024 d-none polygone fil35" points="15956 9154 15773 9154 15773 9e3" />
+	<polygon class="poly1025 d-none polygone fil26" points="15773 9e3 15956 9154 16020 9154 16020 8786" />
+	<polygon class="poly1026 d-none polygone fil36" points="13555 8790 13309 9e3 13487 9154 13555 9154" />
+	<polygon class="poly1027 d-none polygone fil36" points="13487 9154 13309 9154 13309 9e3" />
+	<polygon class="poly1028 d-none polygone fil29" points="14964 9152 14788 9e3 14788 9153" />
+	<polygon class="poly1029 d-none polygone fil29" points="14541 8790 14788 9e3 14788 8578" />
+	<polygon class="poly1030 d-none polygone fil36" points="15034 8790 14788 9e3 14788 8578" />
+	<polygon class="poly1031 d-none polygone fil38" points="13802 9e3 13623 9154 13713 9154 13802 9154" />
+	<polygon class="poly1032 d-none polygone fil39" points="15527 8790 15280 9e3 15459 9154 15527 9154" />
+	<polygon class="poly1033 d-none polygone fil28" points="13980 9154 13802 9154 13802 9e3" />
+	<polygon class="poly1034 d-none polygone fil40" points="13555 8790 13802 9e3 13802 8578" />
+	<polygon class="poly1035 d-none polygone fil39" points="14048 8790 13802 9e3 13802 8578" />
+	<polygon class="poly1036 d-none polygone fil41" points="14048 8790 14295 9e3 14117 9154 14048 9154" />
+	<polygon class="poly1037 d-none polygone fil26" points="14295 8578 14048 8790 14048 8367" />
+	<polygon class="poly1038 d-none polygone fil38" points="14117 9154 14295 9153 14295 9e3" />
+	<polygon class="poly1039 d-none polygone fil39" points="14048 8790 13802 9e3 13980 9154 14048 9154" />
+	<polygon class="poly1040 d-none polygone fil40" points="14541 8790 14295 9e3 14472 9153 14541 9153" />
+	<polygon class="poly1041 d-none polygone fil35" points="14472 9153 14295 9153 14295 9e3" />
+	<polygon class="poly1042 d-none polygone fil41" points="15527 8790 15773 9e3 15773 8578" />
+	<polygon class="poly1043 d-none polygone fil41" points="15773 8578 16020 8789 16020 8790 15773 9e3" />
+	<polygon class="poly1044 d-none polygone fil27" points="15280 8155 15527 8367 15527 7944" />
+	<polygon class="poly1045 d-none polygone fil26" points="15527 8367 15773 8578 15773 8155" />
+	<polygon class="poly1046 d-none polygone fil30" points="15773 8155 16020 8367 15773 8578" />
+	<polygon class="poly1047 d-none polygone fil35" points="14048 8790 14295 9e3 14295 8578" />
+	<polygon class="poly1048 d-none polygone fil41" points="15773 8578 15527 8367 15527 8790" />
+	<polygon class="poly1049 d-none polygone fil28" points="14788 8578 15034 8790 15034 8367" />
+	<polygon class="poly1050 d-none polygone fil26" points="15527 8367 15280 8155 15280 8578" />
+	<polygon class="poly1051 d-none polygone fil42" points="15280 8578 15034 8790 15034 8367" />
+	<polygon class="poly1052 d-none polygone fil37" points="15034 8790 14788 9e3 14788 8578" />
+	<polygon class="poly1053 d-none polygone fil37" points="14295 8578 14541 8790 14541 8367" />
+	<polygon class="poly1054 d-none polygone fil27" points="14788 8578 14541 8790 14541 8367" />
+	<polygon class="poly1055 d-none polygone fil29" points="15034 8790 15280 9e3 15280 8578" />
+	<polygon class="poly1056 d-none polygone fil42" points="15034 8790 15034 9154 14987 9152 14964 9152 14788 9e3" />
+	<polygon class="poly1057 d-none polygone fil36" points="13555 8790 13309 9e3 13309 8578" />
+	<polygon class="poly1058 d-none polygone fil27" points="14048 8367 14295 8578 14295 8155" />
+	<polygon class="poly1059 d-none polygone fil35" points="15034 8367 15280 8578 15280 8155" />
+	<polygon class="poly1060 d-none polygone fil27" points="14541 8367 14295 8578 14295 8155" />
+	<polygon class="poly1061 d-none polygone fil43" points="13309 8578 13555 8790 13555 8367" />
+	<polygon class="poly1062 d-none polygone fil30" points="14541 8367 14788 8578 14788 8155" />
+	<polygon class="poly1063 d-none polygone fil43" points="13555 8367 13309 8578 13309 8155" />
+	<polygon class="poly1064 d-none polygone fil27" points="14048 8367 13802 8578 13802 8155" />
+	<polygon class="poly1065 d-none polygone fil31" points="15100 9154 15281 9e3 15281 9154" />
+	<polygon class="poly1066 d-none polygone fil27" points="15773 8155 16020 7944 16020 8367" />
+	<polygon class="poly1067 d-none polygone fil28" points="13802 8578 13555 8367 13555 8790" />
+	<polygon class="poly1068 d-none polygone fil26" points="14541 8790 14541 9154 14544 9154 14609 9154 14788 9e3" />
+	<polygon class="poly1069 d-none polygone fil26" points="12140 9154 12323 9e3 12323 9154" />
+	<polygon class="poly1070 d-none polygone fil27" points="12323 8151 12077 7940 12077 8363" />
+	<polygon class="poly1071 d-none polygone fil28" points="12077 8786 12323 8574 12323 9e3" />
+	<polygon class="poly1072 d-none polygone fil29" points="12323 8574 12077 8363 12077 8786" />
+	<polygon class="poly1073 d-none polygone fil30" points="12077 8363 12323 8151 12323 8574" />
+	<polygon class="poly1074 d-none polygone fil26" points="8559 9154 8380 9e3 8380 9154" />
+	<polygon class="poly1075 d-none polygone fil27" points="8380 8155 8627 7944 8627 8367" />
+	<polygon class="poly1076 d-none polygone fil28" points="8627 8790 8380 8578 8380 9e3" />
+	<polygon class="poly1077 d-none polygone fil32" points="8380 8578 8627 8367 8627 8790" />
+	<polygon class="poly1078 d-none polygone fil30" points="8627 8367 8380 8155 8380 8578" />
+	<polygon class="poly1079 d-none polygone fil32" points="9188 9154 9366 9154 9366 9e3" />
+	<polygon class="poly1080 d-none polygone fil33" points="9120 8790 9366 9e3 9366 8578" />
+	<polygon class="poly1081 d-none polygone fil34" points="9120 8790 9366 9e3 9188 9154 9120 9154" />
+	<polygon class="poly1082 d-none polygone fil35" points="9120 8367 9366 8578 9366 8155" />
+	<polygon class="poly1083 d-none polygone fil32" points="9051 9154 8873 9e3 8873 9154" />
+	<polygon class="poly1084 d-none polygone fil36" points="8695 9154 8873 9e3 8873 9154" />
+	<polygon class="poly1085 d-none polygone fil37" points="9120 8790 8873 8578 8873 9e3" />
+	<polygon class="poly1086 d-none polygone fil27" points="8873 8155 8627 7944 8627 8367" />
+	<polygon class="poly1087 d-none polygone fil28" points="8627 8790 8873 8578 8873 9e3" />
+	<polygon class="poly1088 d-none polygone fil31" points="8873 8578 9120 8367 9120 8790" />
+	<polygon class="poly1089 d-none polygone fil29" points="8873 8578 8627 8367 8627 8790" />
+	<polygon class="poly1090 d-none polygone fil30" points="8627 8367 8873 8155 8873 8578" />
+	<polygon class="poly1091 d-none polygone fil35" points="12013 9154 11830 9154 11830 9e3" />
+	<polygon class="poly1092 d-none polygone fil26" points="11830 9e3 12013 9154 12077 9154 12077 8786" />
+	<polygon class="poly1093 d-none polygone fil36" points="9612 8790 9366 9e3 9544 9154 9612 9154" />
+	<polygon class="poly1094 d-none polygone fil36" points="9544 9154 9366 9154 9366 9e3" />
+	<polygon class="poly1095 d-none polygone fil29" points="11021 9152 10845 9e3 10845 9153" />
+	<polygon class="poly1096 d-none polygone fil29" points="10598 8790 10845 9e3 10845 8578" />
+	<polygon class="poly1097 d-none polygone fil36" points="11091 8790 10845 9e3 10845 8578" />
+	<polygon class="poly1098 d-none polygone fil38" points="9859 9e3 9681 9154 9770 9154 9859 9154" />
+	<polygon class="poly1099 d-none polygone fil39" points="11584 8790 11338 9e3 11516 9154 11584 9154" />
+	<polygon class="poly1100 d-none polygone fil28" points="1e4 9154 9859 9154 9859 9e3" />
+	<polygon class="poly1101 d-none polygone fil40" points="9612 8790 9859 9e3 9859 8578" />
+	<polygon class="poly1102 d-none polygone fil39" points="10105 8790 9859 9e3 9859 8578" />
+	<polygon class="poly1103 d-none polygone fil41" points="10105 8790 10352 9e3 10174 9154 10105 9154" />
+	<polygon class="poly1104 d-none polygone fil26" points="10352 8578 10105 8790 10105 8367" />
+	<polygon class="poly1105 d-none polygone fil38" points="10174 9154 10352 9153 10352 9e3" />
+	<polygon class="poly1106 d-none polygone fil39" points="10105 8790 9859 9e3 1e4 9154 10105 9154" />
+	<polygon class="poly1107 d-none polygone fil40" points="10598 8790 10352 9e3 10529 9153 10598 9153" />
+	<polygon class="poly1108 d-none polygone fil35" points="10529 9153 10352 9153 10352 9e3" />
+	<polygon class="poly1109 d-none polygone fil41" points="11584 8790 11830 9e3 11830 8578" />
+	<polygon class="poly1110 d-none polygone fil41" points="11830 8578 12077 8789 12077 8790 11830 9e3" />
+	<polygon class="poly1111 d-none polygone fil27" points="11338 8155 11584 8367 11584 7944" />
+	<polygon class="poly1112 d-none polygone fil26" points="11584 8367 11830 8578 11830 8155" />
+	<polygon class="poly1113 d-none polygone fil30" points="11830 8155 12077 8367 11830 8578" />
+	<polygon class="poly1114 d-none polygone fil35" points="10105 8790 10352 9e3 10352 8578" />
+	<polygon class="poly1115 d-none polygone fil41" points="11830 8578 11584 8367 11584 8790" />
+	<polygon class="poly1116 d-none polygone fil28" points="10845 8578 11091 8790 11091 8367" />
+	<polygon class="poly1117 d-none polygone fil26" points="11584 8367 11338 8155 11338 8578" />
+	<polygon class="poly1118 d-none polygone fil42" points="11338 8578 11091 8790 11091 8367" />
+	<polygon class="poly1119 d-none polygone fil37" points="11091 8790 10845 9e3 10845 8578" />
+	<polygon class="poly1120 d-none polygone fil37" points="10352 8578 10598 8790 10598 8367" />
+	<polygon class="poly1121 d-none polygone fil27" points="10845 8578 10598 8790 10598 8367" />
+	<polygon class="poly1122 d-none polygone fil29" points="11091 8790 11338 9e3 11338 8578" />
+	<polygon class="poly1123 d-none polygone fil42" points="11091 8790 11091 9154 11044 9152 11021 9152 10845 9e3" />
+	<polygon class="poly1124 d-none polygone fil36" points="9612 8790 9366 9e3 9366 8578" />
+	<polygon class="poly1125 d-none polygone fil27" points="10105 8367 10352 8578 10352 8155" />
+	<polygon class="poly1126 d-none polygone fil35" points="11091 8367 11338 8578 11338 8155" />
+	<polygon class="poly1127 d-none polygone fil27" points="10598 8367 10352 8578 10352 8155" />
+	<polygon class="poly1128 d-none polygone fil43" points="9366 8578 9612 8790 9612 8367" />
+	<polygon class="poly1129 d-none polygone fil30" points="10598 8367 10845 8578 10845 8155" />
+	<polygon class="poly1130 d-none polygone fil43" points="9612 8367 9366 8578 9366 8155" />
+	<polygon class="poly1131 d-none polygone fil27" points="10105 8367 9859 8578 9859 8155" />
+	<polygon class="poly1132 d-none polygone fil31" points="11157 9154 11338 9e3 11338 9154" />
+	<polygon class="poly1133 d-none polygone fil27" points="11830 8155 12077 7944 12077 8367" />
+	<polygon class="poly1134 d-none polygone fil28" points="9859 8578 9612 8367 9612 8790" />
+	<polygon class="poly1135 d-none polygone fil26" points="10598 8790 10598 9154 10602 9154 10666 9154 10845 9e3" />
+	<polygon class="poly1136 d-none polygone fil26" points="8197 9154 8380 9e3 8380 9154" />
+	<polygon class="poly1137 d-none polygone fil27" points="8380 8151 8134 7940 8134 8363" />
+	<polygon class="poly1138 d-none polygone fil28" points="8134 8786 8380 8574 8380 9e3" />
+	<polygon class="poly1139 d-none polygone fil29" points="8380 8574 8134 8363 8134 8786" />
+	<polygon class="poly1140 d-none polygone fil30" points="8134 8363 8380 8151 8380 8574" />
+	<polygon class="poly1141 d-none polygone fil26" points="4616 9154 4437 9e3 4437 9154" />
+	<polygon class="poly1142 d-none polygone fil27" points="4437 8155 4684 7944 4684 8367" />
+	<polygon class="poly1143 d-none polygone fil28" points="4684 8790 4437 8578 4437 9e3" />
+	<polygon class="poly1144 d-none polygone fil31" points="4321 8478 4321 8678 4437 8578" />
+	<polygon class="poly1145 d-none polygone fil32" points="4437 8578 4684 8367 4684 8790" />
+	<polygon class="poly1146 d-none polygone fil30" points="4684 8367 4437 8155 4437 8578" />
+	<polygon class="poly1147 d-none polygone fil32" points="5245 9154 5423 9154 5423 9e3" />
+	<polygon class="poly1148 d-none polygone fil33" points="5177 8790 5423 9e3 5423 8578" />
+	<polygon class="poly1149 d-none polygone fil34" points="5177 8790 5423 9e3 5245 9154 5177 9154" />
+	<polygon class="poly1150 d-none polygone fil35" points="5177 8367 5423 8578 5423 8155" />
+	<polygon class="poly1151 d-none polygone fil32" points="5109 9154 4930 9e3 4930 9154" />
+	<polygon class="poly1152 d-none polygone fil36" points="4752 9154 4930 9e3 4930 9154" />
+	<polygon class="poly1153 d-none polygone fil37" points="5177 8790 4930 8578 4930 9e3" />
+	<polygon class="poly1154 d-none polygone fil27" points="4930 8155 4684 7944 4684 8367" />
+	<polygon class="poly1155 d-none polygone fil28" points="4684 8790 4930 8578 4930 9e3" />
+	<polygon class="poly1156 d-none polygone fil31" points="4930 8578 5177 8367 5177 8790" />
+	<polygon class="poly1157 d-none polygone fil29" points="4930 8578 4684 8367 4684 8790" />
+	<polygon class="poly1158 d-none polygone fil30" points="4684 8367 4930 8155 4930 8578" />
+	<polygon class="poly1159 d-none polygone fil35" points="8070 9154 7888 9154 7888 9e3" />
+	<polygon class="poly1160 d-none polygone fil26" points="7888 9e3 8070 9154 8134 9154 8134 8786" />
+	<polygon class="poly1161 d-none polygone fil36" points="5670 8790 5423 9e3 5602 9154 5670 9154" />
+	<polygon class="poly1162 d-none polygone fil36" points="5602 9154 5423 9154 5423 9e3" />
+	<polygon class="poly1163 d-none polygone fil29" points="7078 9152 6902 9e3 6902 9153" />
+	<polygon class="poly1164 d-none polygone fil29" points="6655 8790 6902 9e3 6902 8578" />
+	<polygon class="poly1165 d-none polygone fil36" points="7148 8790 6902 9e3 6902 8578" />
+	<polygon class="poly1166 d-none polygone fil38" points="5916 9e3 5738 9154 5827 9154 5916 9154" />
+	<polygon class="poly1167 d-none polygone fil39" points="7641 8790 7395 9e3 7573 9154 7641 9154" />
+	<polygon class="poly1168 d-none polygone fil28" points="6094 9154 5916 9154 5916 9e3" />
+	<polygon class="poly1169 d-none polygone fil40" points="5670 8790 5916 9e3 5916 8578" />
+	<polygon class="poly1170 d-none polygone fil39" points="6163 8790 5916 9e3 5916 8578" />
+	<polygon class="poly1171 d-none polygone fil41" points="6163 8790 6409 9e3 6231 9154 6163 9154" />
+	<polygon class="poly1172 d-none polygone fil26" points="6409 8578 6163 8790 6163 8367" />
+	<polygon class="poly1173 d-none polygone fil38" points="6231 9154 6409 9153 6409 9e3" />
+	<polygon class="poly1174 d-none polygone fil39" points="6163 8790 5916 9e3 6094 9154 6163 9154" />
+	<polygon class="poly1175 d-none polygone fil40" points="6655 8790 6409 9e3 6586 9153 6655 9153" />
+	<polygon class="poly1176 d-none polygone fil35" points="6586 9153 6409 9153 6409 9e3" />
+	<polygon class="poly1177 d-none polygone fil41" points="7641 8790 7888 9e3 7888 8578" />
+	<polygon class="poly1178 d-none polygone fil41" points="7888 8578 8134 8789 8134 8790 7888 9e3" />
+	<polygon class="poly1179 d-none polygone fil27" points="7395 8155 7641 8367 7641 7944" />
+	<polygon class="poly1180 d-none polygone fil26" points="7641 8367 7888 8578 7888 8155" />
+	<polygon class="poly1181 d-none polygone fil30" points="7888 8155 8134 8367 7888 8578" />
+	<polygon class="poly1182 d-none polygone fil35" points="6163 8790 6409 9e3 6409 8578" />
+	<polygon class="poly1183 d-none polygone fil41" points="7888 8578 7641 8367 7641 8790" />
+	<polygon class="poly1184 d-none polygone fil28" points="6902 8578 7148 8790 7148 8367" />
+	<polygon class="poly1185 d-none polygone fil26" points="7641 8367 7395 8155 7395 8578" />
+	<polygon class="poly1186 d-none polygone fil42" points="7395 8578 7148 8790 7148 8367" />
+	<polygon class="poly1187 d-none polygone fil37" points="7148 8790 6902 9e3 6902 8578" />
+	<polygon class="poly1188 d-none polygone fil37" points="6409 8578 6655 8790 6655 8367" />
+	<polygon class="poly1189 d-none polygone fil27" points="6902 8578 6655 8790 6655 8367" />
+	<polygon class="poly1190 d-none polygone fil29" points="7148 8790 7395 9e3 7395 8578" />
+	<polygon class="poly1191 d-none polygone fil42" points="7148 8790 7148 9154 7101 9152 7078 9152 6902 9e3" />
+	<polygon class="poly1192 d-none polygone fil36" points="5670 8790 5423 9e3 5423 8578" />
+	<polygon class="poly1193 d-none polygone fil27" points="6163 8367 6409 8578 6409 8155" />
+	<polygon class="poly1194 d-none polygone fil35" points="7148 8367 7395 8578 7395 8155" />
+	<polygon class="poly1195 d-none polygone fil27" points="6655 8367 6409 8578 6409 8155" />
+	<polygon class="poly1196 d-none polygone fil43" points="5423 8578 5670 8790 5670 8367" />
+	<polygon class="poly1197 d-none polygone fil30" points="6655 8367 6902 8578 6902 8155" />
+	<polygon class="poly1198 d-none polygone fil43" points="5670 8367 5423 8578 5423 8155" />
+	<polygon class="poly1199 d-none polygone fil27" points="6163 8367 5916 8578 5916 8155" />
+	<polygon class="poly1200 d-none polygone fil31" points="7214 9154 7395 9e3 7395 9154" />
+	<polygon class="poly1201 d-none polygone fil27" points="7887 8155 8134 7944 8134 8367" />
+	<polygon class="poly1202 d-none polygone fil28" points="5916 8578 5670 8367 5670 8790" />
+	<polygon class="poly1203 d-none polygone fil26" points="6655 8790 6655 9154 6659 9154 6724 9154 6902 9e3" />
+	<polygon class="poly1204 d-none polygone fil26" points="4254 9154 4437 9e3 4437 9154" />
+	<polygon class="poly1205 d-none polygone fil27" points="4437 8151 4191 7940 4191 8363" />
+	<polygon class="poly1206 d-none polygone fil28" points="4191 8786 4437 8574 4437 9e3" />
+	<polygon class="poly1207 d-none polygone fil29" points="4437 8574 4191 8363 4191 8786" />
+	<polygon class="poly1208 d-none polygone fil30" points="4191 8363 4437 8151 4437 8574" />
+	<polygon class="poly1209 d-none polygone fil26" points="673 9154 495 9e3 495 9154" />
+	<polygon class="poly1210 d-none polygone fil27" points="495 8155 741 7944 741 8367" />
+	<polygon class="poly1211 d-none polygone fil28" points="741 8790 495 8578 495 9e3" />
+	<polygon class="poly1212 d-none polygone fil32" points="495 8578 741 8367 741 8790" />
+	<polygon class="poly1213 d-none polygone fil30" points="741 8367 495 8155 495 8578" />
+	<polygon class="poly1214 d-none polygone fil32" points="1302 9154 1480 9154 1480 9e3" />
+	<polygon class="poly1215 d-none polygone fil33" points="1234 8790 1480 9e3 1480 8578" />
+	<polygon class="poly1216 d-none polygone fil34" points="1234 8790 1480 9e3 1302 9154 1234 9154" />
+	<polygon class="poly1217 d-none polygone fil32" points="1166 9154 988 9e3 988 9154" />
+	<polygon class="poly1218 d-none polygone fil36" points="809 9154 988 9e3 988 9154" />
+	<polygon class="poly1219 d-none polygone fil37" points="1234 8790 988 8578 988 9e3" />
+	<polygon class="poly1220 d-none polygone fil27" points="988 8155 741 7944 741 8367" />
+	<polygon class="poly1221 d-none polygone fil28" points="741 8790 988 8578 988 9e3" />
+	<polygon class="poly1222 d-none polygone fil31" points="988 8578 1234 8367 1234 8790" />
+	<polygon class="poly1223 d-none polygone fil29" points="988 8578 741 8367 741 8790" />
+	<polygon class="poly1224 d-none polygone fil30" points="741 8367 988 8155 988 8578" />
+	<polygon class="poly1225 d-none polygone fil35" points="4128 9154 3945 9154 3945 9e3" />
+	<polygon class="poly1226 d-none polygone fil26" points="3945 9e3 4128 9154 4191 9154 4191 8786" />
+	<polygon class="poly1227 d-none polygone fil36" points="1727 8790 1480 9e3 1659 9154 1727 9154" />
+	<polygon class="poly1228 d-none polygone fil36" points="1659 9154 1480 9154 1480 9e3" />
+	<polygon class="poly1229 d-none polygone fil29" points="3135 9152 2959 9e3 2959 9153" />
+	<polygon class="poly1230 d-none polygone fil29" points="2713 8790 2959 9e3 2959 8578" />
+	<polygon class="poly1231 d-none polygone fil36" points="3205 8790 2959 9e3 2959 8578" />
+	<polygon class="poly1232 d-none polygone fil38" points="1973 9e3 1795 9154 1884 9154 1973 9154" />
+	<polygon class="poly1233 d-none polygone fil39" points="3698 8790 3452 9e3 3630 9154 3698 9154" />
+	<polygon class="poly1234 d-none polygone fil28" points="2151 9154 1973 9154 1973 9e3" />
+	<polygon class="poly1235 d-none polygone fil40" points="1727 8790 1973 9e3 1973 8578" />
+	<polygon class="poly1236 d-none polygone fil39" points="2220 8790 1973 9e3 1973 8578" />
+	<polygon class="poly1237 d-none polygone fil41" points="2220 8790 2466 9e3 2288 9154 2220 9154" />
+	<polygon class="poly1238 d-none polygone fil26" points="2466 8578 2220 8790 2220 8367" />
+	<polygon class="poly1239 d-none polygone fil38" points="2288 9154 2466 9153 2466 9e3" />
+	<polygon class="poly1240 d-none polygone fil39" points="2220 8790 1973 9e3 2151 9154 2220 9154" />
+	<polygon class="poly1241 d-none polygone fil40" points="2713 8790 2466 9e3 2643 9153 2713 9153" />
+	<polygon class="poly1242 d-none polygone fil35" points="2643 9153 2466 9153 2466 9e3" />
+	<polygon class="poly1243 d-none polygone fil41" points="3698 8790 3945 9e3 3945 8578" />
+	<polygon class="poly1244 d-none polygone fil41" points="3945 8578 4191 8789 4191 8790 3945 9e3" />
+	<polygon class="poly1245 d-none polygone fil27" points="3452 8155 3698 8367 3698 7944" />
+	<polygon class="poly1246 d-none polygone fil26" points="3698 8367 3945 8578 3945 8155" />
+	<polygon class="poly1247 d-none polygone fil30" points="3945 8155 4191 8367 3945 8578" />
+	<polygon class="poly1248 d-none polygone fil35" points="2220 8790 2466 9e3 2466 8578" />
+	<polygon class="poly1249 d-none polygone fil41" points="3945 8578 3698 8367 3698 8790" />
+	<polygon class="poly1250 d-none polygone fil28" points="2959 8578 3205 8790 3205 8367" />
+	<polygon class="poly1251 d-none polygone fil26" points="3698 8367 3452 8155 3452 8578" />
+	<polygon class="poly1252 d-none polygone fil42" points="3452 8578 3205 8790 3205 8367" />
+	<polygon class="poly1253 d-none polygone fil37" points="3205 8790 2959 9e3 2959 8578" />
+	<polygon class="poly1254 d-none polygone fil37" points="2466 8578 2713 8790 2713 8367" />
+	<polygon class="poly1255 d-none polygone fil27" points="2959 8578 2713 8790 2713 8367" />
+	<polygon class="poly1256 d-none polygone fil29" points="3205 8790 3452 9e3 3452 8578" />
+	<polygon class="poly1257 d-none polygone fil42" points="3205 8790 3205 9154 3159 9152 3135 9152 2959 9e3" />
+	<polygon class="poly1258 d-none polygone fil36" points="1727 8790 1480 9e3 1480 8578" />
+	<polygon class="poly1259 d-none polygone fil27" points="2220 8367 2466 8578 2466 8155" />
+	<polygon class="poly1260 d-none polygone fil35" points="3205 8367 3452 8578 3452 8155" />
+	<polygon class="poly1261 d-none polygone fil27" points="2713 8367 2466 8578 2466 8155" />
+	<polygon class="poly1262 d-none polygone fil43" points="1480 8578 1727 8790 1727 8367" />
+	<polygon class="poly1263 d-none polygone fil30" points="2713 8367 2959 8578 2959 8155" />
+	<polygon class="poly1264 d-none polygone fil27" points="2220 8367 1973 8578 1973 8155" />
+	<polygon class="poly1265 d-none polygone fil31" points="3272 9154 3452 9e3 3452 9154" />
+	<polygon class="poly1266 d-none polygone fil27" points="3945 8155 4191 7944 4191 8367" />
+	<polygon class="poly1267 d-none polygone fil28" points="1973 8578 1727 8367 1727 8790" />
+	<polygon class="poly1268 d-none polygone fil26" points="2713 8790 2713 9154 2716 9154 2781 9154 2959 9e3" />
+	<polygon class="poly1269 d-none polygone fil36" points="316 9154 495 9e3 495 9154" />
+	<polygon class="poly1270 d-none polygone fil27" points="495 8155 248 7944 248 8367" />
+	<polygon class="poly1271 d-none polygone fil28" points="248 8790 495 8578 495 9e3" />
+	<polygon class="poly1272 d-none polygone fil29" points="495 8578 248 8367 248 8790" />
+	<polygon class="poly1273 d-none polygone fil30" points="248 8367 495 8155 495 8578" />
+	<polygon class="poly1274 d-none polygone fil36" points="188 9154 10 9e3 10 9154" />
+	<polygon class="poly1275 d-none polygone fil27" points="10 8155 256 7944 256 8367" />
+	<polygon class="poly1276 d-none polygone fil28" points="256 8790 10 8578 10 9e3" />
+	<polygon class="poly1277 d-none polygone fil29" points="10 8578 256 8367 256 8790" />
+	<polygon class="poly1278 d-none polygone fil30" points="256 8367 10 8155 10 8578" />
+	<polygon class="poly1279 d-none polygone fil27" points="16020 7944 16266 8155 16020 8367" />
+	<polygon class="poly1280 d-none polygone fil28" points="16266 7309 16020 7521 16266 7732" />
+	<polygon class="poly1281 d-none polygone fil29" points="16020 7521 16266 7732 16020 7944" />
+	<polygon class="poly1282 d-none polygone fil30" points="16266 7732 16020 7944 16266 8155" />
+	<polygon class="poly1283 d-none polygone fil27" points="15527 8362 15280 8151 15527 7940" />
+	<polygon class="poly1284 d-none polygone fil26" points="15773 8151 15527 7940 15773 7728" />
+	<polygon class="poly1285 d-none polygone fil30" points="16020 7939 15773 7728 15773 8151 16020 7940" />
+	<polygon class="poly1286 d-none polygone fil27" points="16020 7940 15773 8151 16020 8363" />
+	<polygon class="poly1287 d-none polygone fil27" points="256 7955 10 8166 256 8378" />
+	<polygon class="poly1288 d-none polygone fil28" points="10 7320 256 7532 10 7743" />
+	<polygon class="poly1289 d-none polygone fil29" points="256 7532 10 7743 256 7955" />
+	<polygon class="poly1290 d-none polygone fil30" points="10 7743 256 7955 10 8166" />
+	<polygon class="poly1291 d-none polygone fil27" points="749 8374 996 8162 749 7951" />
+	<polygon class="poly1292 d-none polygone fil26" points="503 8162 749 7951 503 7739" />
+	<polygon class="poly1293 d-none polygone fil30" points="503 7739 503 8162 256 7951" />
+	<polygon class="poly1294 d-none polygone fil27" points="256 7951 503 8162 256 8374" />
+</svg>
+	<main class="d-flex w-100 mx-auto flex-column">
+		<div class="mb-auto">
+		</div>
+		<div class="mb-auto">
+			<div class="text-center">
+				<img class="bgexpress bgexpress-md" src="img/bg_big.png" alt="" width="33%">
+				<img class="bgexpress bgexpress-sm" src="img/bg_small.png" alt="" height="200">
+			</div>
+		</div>
+	</main>
+	<button id="btnBack" data-value="home" class="btnBack d-none" type="button"></button>
+	<button id="btnProfile" class="btnProfile d-none" type="button">
+		<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+			<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+			<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+		</svg>
+	</button>
+	<div class="otpAlertPlaceholder" id="otpAlertPlaceholder">
+	</div>
+	<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" id="mdlOTP"></div>
+	<div class="mptdiv d-none"></div>
+	<div style="position: fixed;bottom: 0;z-index: 2022;">
+		<div style="position: fixed; left: 20px; bottom: 0;"><span style="font-size: 0.75rem;font-family: arial;font-weight: 400;">Powered by </span><a href="http://expressdisplay.net" target="_blank">ExpressDisplay</a></div>
+		<div style="position: fixed; right: 20px; bottom: 0;"><span style="font-size: 0.75rem;font-family: arial;font-weight: 400;"><a style="text-decoration: unset; color: unset;" href="changelog" target="_blank">V1.1.0.0</a></span></div>
+	</div>
+	<div id="qrcode" style="position: fixed;top:10px;left:10px" class="d-none"></div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/intlTelInput.min.js"></script>
+	<script type="text/javascript" src="js/dom-to-image.min.js"></script>
+	<script type="text/javascript" src="js/qrcode.min.js"></script>
+	<script type="text/javascript" src="js/calendar.min.js"></script>
+	<script type="text/javascript" src="js/jqbtk.js"></script>
+	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCE_o65qi0cg_YJI4pXn5rhrKVXcMfBag&amp;language=fr" defer></script>
+		<script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js" defer></script>
+	<script type="text/javascript">
+	var pageclicked = false;
+
+	var noscript = /<script\b[^>]*>([\s\S]*?)<\/script>/gm;
+
+	var lat = 36.8092261;
+	var long = 10.1826318;
+	var country = "TN";
+
+	var map;
+	var globmarkers = [];
+	var mypos;
+
+
+	var srvc = "";
+
+	var wait = false;
+
+	var pagename = "";
+	var olddata = "";
+	var kid;
+
+	var qrcode = new QRCode("qrcode", {
+		text: "https://monticket.expressdisplay.net",
+		width: 128,
+		height: 128,
+		colorDark: "#000000",
+		colorLight: "#ffffff"
+	});
+
+	/* first page load */
+	$(window).on('load', function() {
+		if (getUrlParameter("kid") && getUrlParameter("kid") !== "") {
+			kid = getUrlParameter("kid");
+		}
+		getLocation();
+		$('#bgpoly').addClass("gradienttrans");
+		setInterval(function() {
+			var rand = Math.floor(Math.random() * (1294 - 1001 + 1) + 1001);
+			$('.poly' + rand).removeClass("polyanim");
+			setTimeout(function() {
+				setTimeout(function() {
+					$('.poly' + rand).css('fill', '#' + Math.floor(Math.random() * 16777215).toString(16));
+				}, 6000);
+				$('.poly' + rand).addClass("polyanim");
+			}, 12000);
+		}, 1000);
+		var time = 5;
+		$('.polygone').each(function() {
+			var that = this;
+			setTimeout(function() {
+				$(that).removeClass("d-none");
+			}, time)
+			time += 5;
+		});
+		setInterval(function() {
+			getUpdate();
+		}, 10000);
+		setInterval(function() {
+			updatePosition();
+		}, 2000);
+		setTimeout(function() {
+			getLandingPage("cookie");
+		}, 3000);
+		updateEnc();
+	}).resize(function() {
+		updatesecheight();
+	});
+
+	/* on clicks */
+	$(document).on('click', function() {
+		pageclicked = true;
+	}).on('click', '.btnLang', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/landing/lang.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": $(this).data("value")
+				},
+				success: function() {
+					EndWait();
+					location.reload();
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('click', '#btnCheckConnect', function() {
+		CheckConnect();
+	}).on('keyup', '#txtLoginTel', function(e) {
+		if (e.key === "Enter") {
+			e.preventDefault();
+			CheckConnect();
+		}
+	}).on('click', '.btnGetMap', function() {
+		window.history.pushState(null, "", window.location.href);
+		PleaseWait(this);
+		GetMap($(this).data("value"));
+	}).on('keyup', '.btnGetMap', function(e) {
+		if (e.key === "Enter" || e.key === "Space") {
+			PleaseWait('.btnGetMap');
+			e.preventDefault();
+			GetMap($(this).data("value"));
+		}
+	}).on('click', '.btnService', function() {
+		PleaseWait(this);
+		google.maps.event.trigger(globmarkers[$(this).data("id")], 'click');
+	}).on('click', '.btnServiceMore', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/cross/serviceMore.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": $(this).data("value"),
+					"parm2": lat,
+					"parm3": long
+				},
+				success: function(data) {
+					EndWait();
+					$("#DivServiceMore").html(data);
+					switch ($('.btnServiceMore').data("value")) {
+						case '1':
+							//service
+							$('.btnServiceMore').html($('.btnServiceMore').data("info"));
+							$('.btnServiceMore').data("value", "0");
+
+							break;
+						default:
+							//info
+							$('.btnServiceMore').html($('.btnServiceMore').data("service"));
+							$('.btnServiceMore').data("value", "1");
+
+							break;
+					}
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('click', '#otpResend', function() {
+		$.ajax({
+			url: "web/connect/smsResend.php",
+			type: "POST",
+			success: function() {
+				$(".otpResend").removeClass("fw-bolder");
+				$(".otpResend").attr("id", "otpResends");
+			}
+		});
+	}).on('click', '#btnProfile', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/profile/profile.php",
+				type: "POST",
+				/* dataType: "json",*/
+				// data: {"parm1": $(this).data("value"), "parm2": $(this).data("name")},
+				success: function(data) {
+					EndWait();
+					$("#mdlOTP").html(data);
+					var modal = bootstrap.Modal.getOrCreateInstance(document.querySelector('#mdlOTP'));
+					modal.show();
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('click', '.btnDisconnect', function() {
+		PleaseWait(this);
+		Disconnect();
+	}).on('click', '#btnConfirm', function() {
+		ConfirmOTP();
+	}).on('keyup', '#txtOTP', function(e) {
+		if (e.key === "Enter") {
+			e.preventDefault();
+			ConfirmOTP();
+		}
+	}).on('click', '#reboot', function() {
+		PleaseWait(this);
+		location.reload();
+	}).on('click', '#btnBack', function() {
+		getBack();
+	}).on('click', '.btncheckTicket', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/ticket/checkTicket.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": $(this).data("value"),
+					"parm101": country
+				},
+				success: function(data) {
+					EndWait();
+					$("#mdlOTP").html(data);
+					var modal = bootstrap.Modal.getOrCreateInstance(document.querySelector('#mdlOTP'));
+					modal.show();
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('click', '.btnSetTicket', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/ticket/SetTicket.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": $(this).data("value"),
+					"parm101": country
+				},
+				success: function(data) {
+					EndWait();
+					$(".mptdiv").html(data);
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('click', '.btngetRDV', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/cross/getRDV.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": $(this).data("value")
+				},
+				success: function(data) {
+					EndWait();
+					$("#mdlOTP").html(data);
+					var modal = bootstrap.Modal.getOrCreateInstance(document.querySelector('#mdlOTP'));
+					modal.show();
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('click', '.btnConfirmRDV', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/rdv/confirmRDV.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": $(this).data("value")
+				},
+				success: function(data) {
+					EndWait();
+					$("#mdlOTP").html(data);
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('click', '.btnSetRDV', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/cross/SetRDV.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": $(this).data("value"),
+					"parm101": country
+				},
+				success: function(data) {
+					EndWait();
+					$(".mptdiv").html(data);
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('click', '.btnconfirmDelRDV', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/rdv/confirmDELRDV.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": $(this).data("value")
+				},
+				success: function(data) {
+					EndWait();
+					$("#mdlOTP").html(data);
+					var modal = bootstrap.Modal.getOrCreateInstance(document.querySelector('#mdlOTP'));
+					modal.show();
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('click', '.btnDelRDV', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/rdv/DELRDV.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": $(this).data("value")
+				},
+				success: function(data) {
+					EndWait();
+					$(".mptdiv").html(data);
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('change', '#countryCode', function() {
+		$("#txtLoginTel").focus();
+	}).on('click', '.srvc', function() {
+		srvc = "";
+		$('input[name="srvc"]:checked').each(function(i) {
+			srvc = srvc + "-" + $(this).val();
+		});
+		if (srvc === "") {
+			$(".divmultibtn").addClass("d-none");
+		} else {
+			$(".divmultibtn").removeClass("d-none");
+		}
+	}).on('click', '.btncheckLogin', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/connect/checkLogin.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm101": country
+				},
+				success: function(data) {
+					EndWait();
+					$("#mdlOTP").html(data);
+					var modal = bootstrap.Modal.getOrCreateInstance(document.querySelector('#mdlOTP'));
+					modal.show();
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('click', '.btnEdit', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/profile/edit.php",
+				type: "POST",
+				/* dataType: "json",*/
+				success: function(data) {
+					EndWait();
+					$("#mdlOTP").html(data);
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('click', '.btnSetEdit', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/profile/SetEdit.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": $('#txtEditLname').val(),
+					"parm2": $('#txtEditFname').val(),
+					"parm3": $('#txtEditEmail').val()
+				},
+				success: function(data) {
+					EndWait();
+					$(".mptdiv").html(data);
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('click', '.ticketFocus', function() {
+		PleaseWait(this);
+		ticketFocus($(this).data("id_agence"), $(this).data("id_service"), $(this).data("num_ticket"));
+	}).on('click', '.rdvFocus', function() {
+		PleaseWait(this);
+		rdvFocus($(this).data("value"));
+	}).on('click', '.btnPrint', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/ticket/print.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": $(this).data("value"),
+					"parm2": $(this).data("name")
+				},
+				success: function(data) {
+					EndWait();
+					$.ajax({
+						url: "web/ticket/done.php",
+						type: "POST",
+						success: function(hardd) {
+							$("#mdlOTP").html(hardd);
+						}
+					}).then(function() {
+						$("#printdivclone").html(data);
+					}).then(function() {
+						$("#qrcodeclone").html($('#qrcode').html());
+					});
+
+					$("#textfile").css("visibility", "visible");
+
+					setTimeout(function() {
+						domtoimage.toJpeg(document.getElementById('printdivclone'), {
+							quality: 1
+						}).then(function(dataUrl) {
+							var link = document.getElementById('downloadprint');
+							var newDate = formatDate();
+							link.download = 'ticket_' + newDate + '.jpeg';
+							link.href = dataUrl;
+							link.click();
+						});
+					}, 1000);
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('click', '.btnLive', function() {
+		PleaseWait(this);
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/ticket/Live.php",
+				type: "POST",
+				success: function(data) {
+					EndWait();
+					$("#mdlOTP").html(data);
+					var modal = bootstrap.Modal.getOrCreateInstance(document.querySelector('#mdlOTP'));
+					updatedist();
+					modal.show();
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	}).on('keyup', '#agencysearch', function(e) {
+		if ($(this).val() === "") {
+			$('.agfilter').each(function() {
+				$(this).removeClass("d-none");
+			});
+		} else {
+			$('.agfilter').each(function() {
+				if ($(this).data("name").toLowerCase().includes($('#agencysearch').val().toLowerCase()) || $(this).data("addr").toLowerCase().includes($('#agencysearch').val().toLowerCase())) {
+					$(this).removeClass("d-none");
+				} else {
+					$(this).addClass("d-none");
+				}
+			});
+		}
+	});
+	var rdvFocus = function(parm1) {
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/cross/FocusRDV.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": parm1
+				},
+				success: function(data) {
+					EndWait();
+					$("#mdlOTP").html(data);
+					var modal = bootstrap.Modal.getOrCreateInstance(document.querySelector('#mdlOTP'));
+					updatedist();
+					modal.show();
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	};
+	var ticketFocus = function(parm1, parm2, parm3, parm4 = 'no') {
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/ticket/FocusTicket.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": parm1,
+					"parm2": parm2,
+					"parm3": parm3,
+					"parm4": parm4
+				},
+				success: function(data) {
+					EndWait();
+					$("#mdlOTP").html(data);
+					var modal = bootstrap.Modal.getOrCreateInstance(document.querySelector('#mdlOTP'));
+					updatedist();
+					modal.show();
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	};
+	var getUnsuppPage = function() {
+		$.ajax({
+			url: "unsupported.php",
+			type: "POST",
+			success: function(data) {
+				$("main").hide().html(data).fadeIn("slow");
+			},
+			error: function(error) {
+				console.log(error);
+			}
+		});
+	};
+	var getLandingPage = function(cookie) {
+		if (!wait) {
+			PleaseWait("mptdiv");
+			wait = true;
+			var parm1 = "FR";
+			if (cookie === "cookie") {
+				if (typeof getCookie("Lang") !== 'undefined') {
+					parm1 = getCookie("Lang");
+				}
+			} else {
+				parm1 = cookie;
+			}
+			$.ajax({
+				url: "web/landing/landing.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": parm1
+				},
+				success: function(data) {
+					pagename = "landing";
+					EndWait();
+					$("main").hide().html(data).fadeIn("slow");
+					updatedist();
+					updatesecheight();
+					$('#masseffects').masonry({
+						percentPosition: true
+					});
+					if (kid) {
+						GetMap("");
+					}
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	};
+
+	var getUpdate = function() {
+		if (pagename === "service") {
+			$.ajax({
+				url: "web/ticket/serviceUpdate.php",
+				type: "POST",
+				data: {
+					"parm1": lat,
+					"parm2": long
+				},
+				success: function(data) {
+					if (data !== '') {
+						var nbc = data.split('|');
+						var nb = 0;
+						$('.nbattente').each(function() {
+							$(this).html(nbc[nb].split('-')[0]);
+							nb++;
+						});
+						var nb = 0;
+						$('.workingservices').each(function() {
+							if (nbc[nb].split('-')[1] === "0") {
+								$(this).addClass("disabled");
+							} else {
+								$(this).removeClass("disabled");
+							}
+							nb++;
+						});
+					}
+				},
+				error: function(error) {
+					console.log(error);
+				}
+			});
+		} else if (pagename === "landing") {
+			$.ajax({
+				url: "web/landing/sideUpdate.php",
+				type: "POST",
+				success: function(data) {
+					if (data !== '' && data !== olddata) {
+						olddata = data;
+						$("#secondside").html(data);
+						updatedist();
+						updatesecheight();
+						$('#masseffects').masonry({
+							percentPosition: true
+						});
+					}
+				},
+				error: function(error) {
+					console.log(error);
+				}
+			});
+		}
+	};
+	var CheckConnect = function() {
+		if ($('#txtLoginTel').val() !== '') {
+			PleaseWait('#btnCheckConnect');
+			if (!wait) {
+				wait = true;
+				$.ajax({
+					url: "web/connect/checkConnect.php",
+					type: "POST",
+					/* dataType: "json",*/
+					data: {
+						"parm1": $('#txtLoginTel').val(),
+						"parm2": $('.iti__selected-dial-code').text().replace('+', '')
+					},
+					success: function(data) {
+						EndWait();
+						$(".mptdiv").html(data);
+					},
+					error: function(error) {
+						console.log(error);
+						EndWait();
+					}
+				});
+			}
+		}
+	};
+	var GetMap = function(parm3) {
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/landing/map.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": lat,
+					"parm2": long,
+					"parm3": parm3
+				},
+				success: function(data) {
+					EndWait();
+					$("#firstside").css({
+						"position": "relative",
+						"right": "100%"
+					});
+					$("#firstside").html(data);
+					$("#firstside").animate({
+						right: 0,
+					}, 700);
+					updatesecheight();
+					if (kid) {
+						google.maps.event.trigger(globmarkers[kid], 'click');
+					} else {
+						$.ajax({
+							url: "web/cross/agency.php",
+							type: "POST",
+							/* dataType: "json",*/
+							data: {
+								"parm1": lat,
+								"parm2": long
+							},
+							success: function(data) {
+								pagename = "agency";
+								EndWait();
+								$("#secondside").css({
+									"position": "relative",
+									"left": "100%"
+								});
+								$("#secondside").html(data);
+								$("#secondside").animate({
+									left: 0,
+								}, 700);
+								updatedist();
+								updateEnc();
+							},
+							error: function(error) {
+								console.log(error);
+								EndWait();
+							}
+						});
+					}
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	};
+
+	var ConfirmOTP = function() {
+		PleaseWait('#btnConfirm');
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/connect/smsConfirm.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": $('#txtOTP').val()
+				},
+				success: function(data) {
+					EndWait();
+					$(".mptdiv").html(data);
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	};
+	var getBack = function() {
+		if ($("#btnBack").data("value") === "home") {
+			$("#firstside").animate({
+				right: '100%',
+			}, 700);
+			$("#secondside").animate({
+				left: '100%',
+			}, 700);
+			updatedist();
+			updateEnc();
+			setTimeout(function() {
+				getLandingPage("cookie");
+			}, 500);
+		} else {
+			google.maps.event.trigger(mypos, 'click');
+		}
+	};
+	var getAgency = function() {
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/cross/agency.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": lat,
+					"parm2": long
+				},
+				success: function(data) {
+					pagename = "agency";
+					EndWait();
+					$("#secondside").hide().html(data).fadeIn("slow");
+					updatedist();
+					updateEnc();
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	};
+	var alert = function(message, type) {
+		$("#otpAlertPlaceholder").hide().html('<div class="alert alert-' + type + '" role="alert">' + message + '</div>').fadeIn("slow");
+		setTimeout(function() {
+			$("#otpAlertPlaceholder").html('');
+			if (type === "success") {
+				location.reload();
+			}
+		}, 3000);
+
+	};
+	var updatesecheight = function() {
+		if ($(window).width() < 1200) {
+			//var fside = $("#firstside").height() * 1 + 56;
+			var fside = $("#firstside").height() * 1;
+			$("#secondside").height("calc(100vh - " + fside + "px)");
+		} else {
+			//$("#secondside").height("calc(100vh - 56px)");
+			$("#secondside").height("100vh");
+		}
+	};
+	var getLocation = function() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(setPosition);
+		} else {
+			alert("Geolocation is not supported by this browser.");
+		}
+	};
+	var setPosition = function(p) {
+		lat = p.coords.latitude;
+		long = p.coords.longitude;
+
+		$.getJSON("https://ipinfo.io/?token=6a758d94ee81ec", function(r) {
+			country = r.country;
+		});
+	};
+	var updatePosition = function() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(p) {
+				lat = p.coords.latitude;
+				long = p.coords.longitude;
+			});
+		}
+	};
+	var distance = function(lat1, lon1, lat2, lon2, unit) {
+		if ((lat1 === lat2) && (lon1 === lon2)) {
+			return 0;
+		} else {
+			var radlat1 = Math.PI * lat1 / 180;
+			var radlat2 = Math.PI * lat2 / 180;
+			var theta = lon1 - lon2;
+			var radtheta = Math.PI * theta / 180;
+			var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+			if (dist > 1) {
+				dist = 1;
+			}
+			dist = Math.acos(dist);
+			dist = dist * 180 / Math.PI;
+			dist = dist * 60 * 1.1515;
+			if (unit === "K") {
+				dist = dist * 1.609344;
+			}
+			if (unit === "N") {
+				dist = dist * 0.8684;
+			}
+			return dist;
+		}
+	};
+	var updatedist = function() {
+		$('.xydistance').each(function() {
+			$(this).html("~" + Math.round(distance(lat, long, $(this).data("xd"), $(this).data("yd"), 'K') * 100) / 100 + " KM");
+		});
+	};
+	var getCookie = function(cookieName) {
+		var cookie = {};
+		document.cookie.split(';').forEach(function(el) {
+			var [key, value] = el.split('=');
+			cookie[key.trim()] = value;
+		});
+		return cookie[cookieName];
+	};
+	var getService = function(servID, position) {
+		if (!wait) {
+			wait = true;
+			$.ajax({
+				url: "web/cross/service.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm1": servID,
+					"parm2": lat,
+					"parm3": long
+				},
+				success: function(data) {
+					pagename = "service";
+					EndWait();
+					$("#secondside").hide().html(data).fadeIn("slow");
+					updatedist();
+					map.panTo(position);
+					updateEnc();
+				},
+				error: function(error) {
+					if (error.statusText === "unavailable") {
+						var alertkiosk = "";
+						if (getCookie("Lang") === 'FR') {
+							alertkiosk = "Cette agence n'est pas disponible pour le moment, veuillez réessayer plus tard";
+						} else if (getCookie("Lang") === 'EN') {
+							alertkiosk = "This agency is not available right now, please try again later";
+						} else {
+							alertkiosk = "هذه الوكالة غير متوفرة الآن ، يرجى المحاولة مرة أخرى لاحقًا";
+						}
+						alert(alertkiosk, "danger");
+					} else if (error.statusText === "not_found") {
+						alert("<h4>internal error</h4>", "danger");
+					}
+					EndWait();
+				}
+			});
+		}
+	};
+
+
+	var selectDate = function(date) {
+		if (!wait) {
+			wait = true;
+			$('#calendar-wrapper').updateCalendarOptions({
+				date: date
+			});
+			var selectedate = new Date(calendar.getSelectedDate().getTime() - (calendar.getSelectedDate().getTimezoneOffset() * 60000)).toISOString().split("T")[0];
+			$.ajax({
+				url: "web/cross/getRDVSide.php",
+				type: "POST",
+				/* dataType: "json",*/
+				data: {
+					"parm3": selectedate
+				},
+				success: function(data) {
+					EndWait();
+					$("#Modalsecondside").hide().html(data).fadeIn("slow");
+				},
+				error: function(error) {
+					console.log(error);
+					EndWait();
+				}
+			});
+		}
+	};
+
+
+	var Disconnect = function() {
+		$.ajax({
+			url: "web/connect/disconnect.php",
+			type: "POST",
+			success: function(data) {
+				$(".mptdiv").html(data);
+			}
+		});
+	};
+
+	var PleaseWait = function(btn) {
+		$(".spinner-border").remove();
+		$(btn).prepend('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
+		$(".cocoon").removeClass("d-none");
+	};
+	var EndWait = function() {
+		$(".spinner-border").remove();
+		$(".cocoon").addClass("d-none");
+		wait = false;
+	};
+	var isFacebookApp = function() {
+		var ua = navigator.userAgent || navigator.vendor || window.opera;
+		return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
+	};
+	var formatDate = function() {
+		var d = new Date(),
+			month = '' + (d.getMonth() + 1),
+			day = '' + d.getDate(),
+			year = d.getFullYear(),
+			hr = d.getHours(),
+			min = d.getMinutes(),
+			sec = d.getSeconds();
+
+		if (month.length < 2)
+			month = '0' + month;
+		if (day.length < 2)
+			day = '0' + day;
+
+		return [year, month, day].join('-') + " " + [hr, min, sec].join('_');
+	};
+	var getcode = function() {
+		domtoimage.toJpeg(document.getElementById('printdivclone'), {
+			quality: 1
+		}).then(function(dataUrl) {
+			var link = document.getElementById('downloadprint');
+			var newDate = formatDate();
+			link.download = 'code_' + newDate + '.jpeg';
+			link.href = dataUrl;
+			link.click();
+		});
+	};
+	var updateEnc = function() {
+		if (typeof getCookie("enc") !== 'undefined') {
+			var arrenc = JSON.parse(decodeURIComponent(getCookie("enc")));
+			if (arrenc) {
+				for (var x in arrenc) {
+					if (arrenc[x] === 3) {
+						$('.enc' + x + 'red').each(function() {
+							$(this).removeClass("enctrans");
+							$(this).css("fill", "red");
+						});
+						$('.enc' + x + 'orange').each(function() {
+							$(this).removeClass("enctrans");
+							$(this).css("fill", "orange");
+						});
+						$('.enc' + x + 'green').each(function() {
+							$(this).removeClass("enctrans");
+							$(this).css("fill", "green");
+						});
+					} else if (arrenc[x] === 2) {
+						$('.enc' + x + 'red').each(function() {
+							$(this).removeClass("enctrans");
+							$(this).css("fill", "unset");
+						});
+						$('.enc' + x + 'orange').each(function() {
+							$(this).removeClass("enctrans");
+							$(this).css("fill", "orange");
+						});
+						$('.enc' + x + 'green').each(function() {
+							$(this).removeClass("enctrans");
+							$(this).css("fill", "green");
+						});
+					} else {
+						$('.enc' + x + 'red').each(function() {
+							$(this).removeClass("enctrans");
+							$(this).css("fill", "unset");
+						});
+						$('.enc' + x + 'orange').each(function() {
+							$(this).removeClass("enctrans");
+							$(this).css("fill", "unset");
+						});
+						$('.enc' + x + 'green').each(function() {
+							$(this).removeClass("enctrans");
+							$(this).css("fill", "green");
+						});
+					}
+				}
+			}
+
+		}
+	};
+	var getUrlParameter = function(sParam) {
+		var sPageURL = window.location.search.substring(1),
+			sURLVariables = sPageURL.split('&'),
+			sParameterName,
+			i;
+
+		for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+
+			if (sParameterName[0] === sParam) {
+				return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+			}
+		}
+		return false;
+	};
+</script></body>
+
+	</html>

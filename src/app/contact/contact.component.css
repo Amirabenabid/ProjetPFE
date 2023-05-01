@@ -1,0 +1,17 @@
+/* #content{
+    background-image: url(C:/Users/OMARINFO/Pictures\CameraRoll/image.jpg);
+    width:200px;
+    height: 200px;
+    color:white;
+    line-height: 200px;
+    text-align:center;
+    text-decoration: underline;
+
+}  */     .background-image{
+          background-image:url("https://mdbootstrap.com/img/Photos/Others/images/77.jpg?fbclid=IwAR0lYdnIPznyiw7vuf10yTZa-lROsj2XcpIRQyV_6HHvSTEZp_OiYEmlvW8");
+          background-size:cover;
+          background-repeat: no-repeat;
+          margin-top: -22px;
+      
+          height:100vh}
+     

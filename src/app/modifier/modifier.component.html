@@ -1,0 +1,74 @@
+
+
+<div class="container">
+
+
+  <div class="card bg-light">
+  <article class="card-body mx-auto" style="max-width: 350px;">
+    <div style="text-align: right;">
+      <button (click)="setLangueArabe()" style="background-color: rgb(255, 255, 255);border-color: aliceblue;" type="button"> 
+    <img src="https://cdn-icons-png.flaticon.com/512/4855/4855834.png"[height]="20" alt="Arabe">
+   </button>
+ <button (click)="setLangueFrancais()"  style="background-color: rgb(255, 255, 255);border-color: aliceblue;" type="button">
+   <img src="https://cdn-icons-png.flaticon.com/512/5315/5315693.png"[height]="20" alt=""></button>
+ <button (click)="setlangueAnglais()" style="background-color: rgb(255, 254, 254);border-color: aliceblue;" type="button">
+   <img src="https://as2.ftcdn.net/v2/jpg/00/95/45/61/1000_F_95456103_ZAkq44OVLaX7zHS37aOZumekTyu8RrSq.jpg" height="20" alt=""></button>        
+ </div>
+    
+    <form class="form">
+  
+          <label class="image-upload-container btn btn-bwm">
+              <span>{{textsection27.section27}}</span>
+              <input #imageInput
+                     type="file"
+                     accept="image/*">
+            </label>
+  
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+       </div>
+          <input name="" class="form-control" placeholder="{{textsection28.section28}}" type="text">
+      </div> <!-- form-group// -->
+      <div class="form-group input-group">
+      <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+       </div>
+          <input name="" class="form-control" placeholder="{{textsection29.section29}}" type="text">
+      </div>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+       </div>
+          <input name="" class="form-control" placeholder="{{textsection30.section30}}" type="email">
+      </div> <!-- form-group// -->
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+      </div>
+      <select class="custom-select" style="max-width: 100px;">
+          <option selected="">+216</option>
+              <option value="4">+971</option>
+          <option value="1">+972</option>
+          <option value="2">+198</option>
+          <option value="3">+701</option>
+      </select>
+        <input name="" class="form-control" placeholder="{{textsection31.section31}}" type="text">
+      </div> <!-- form-group// -->
+                                     
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block" routerLink="/compte"> {{textsection32.section32}}  </button>
+      </div> <!-- form-group// -->      
+  </form>
+  </article>
+  </div> <!-- card.// -->
+  
+  </div> 
+  <!--container end.//-->
+  
+  <br><br>
+  <article class="bg-secondary mb-3">  
+  <div class="card-body text-center">
+  </div>
+  <br><br>
+  </article>

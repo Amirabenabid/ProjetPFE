@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+<style>
+h1 {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+  <div style="text-align: right;  height: 30px;width: 30px;">
+    <button (click)="setLangueArabe()" style="background-color: rgb(255, 255, 255);border-color: aliceblue;" type="button"> 
+  <img src="https://cdn-icons-png.flaticon.com/512/4855/4855834.png"[height]="20" alt="Arabe">
+ </button>
+<button (click)="setLangueFrancais()"  style="background-color: rgb(255, 255, 255);border-color: aliceblue;" type="button">
+ <img src="https://cdn-icons-png.flaticon.com/512/5315/5315693.png"[height]="20" alt=""></button>
+<button (click)="setlangueAnglais()" style="background-color: rgb(255, 254, 254);border-color: aliceblue;" type="button">
+ <img src="https://as2.ftcdn.net/v2/jpg/00/95/45/61/1000_F_95456103_ZAkq44OVLaX7zHS37aOZumekTyu8RrSq.jpg" height="20" alt=""></button>        
+</div>
+    
+</body>
+<!-- Button trigger modal -->
+<!-- Button trigger modal -->
+<form >  
+<!-- Modal -->
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="text-align: center;margin-left: 80px;">{{textsection21.section21}}</h5>
+      </div>
+      <div class="modal-body">
+          <form [formGroup]="reactiveForm" class="row g-3">
+            
+              <img src="https://securityintelligence.com/wp-content/uploads/2018/10/si-advanced-authentication-feature.jpg"
+              height="180px" alt="" style="margin-left: 20%;">
+           
+
+
+              <div class="col-md-12">
+                <label for="textMobile" class="form-label"></label>
+                <div class="input-group">
+                  <international-phone-number formControlName="phoneNumber" [(ngModel)]="phoneNumber"></international-phone-number>
+
+                  <br>
+
+                </div>                           
+                  <br>
+                   <p style="text-align: center;">{{textsection22.section22}}</p>  
+                </div>
+                <div class="col-6" class="text-center">
+                  <button type="button" class="btn btn-outline-info" style="margin-left: 180px;padding-left: 20px;padding-right:20px ;" data-bs-dismiss="modal" (click)="displayCode()"
+                  >Se Connecter</button>
+                </div>
+
+                <div *ngIf="codesended">
+
+                <div class="col-md-10"><br>
+                  <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label" style="font-size: 20px;font-style:bold;">{{textsection23.section23}} </label>
+                    <div class="col-sm-10">
+                      <input type="code" formControlName="codeSaisi" [ngModel]="codeSaisi" class="form-control is-valid" minlength="4" maxlength="4" placeholder="_ _ _ _">
+                    </div>
+                  </div>
+                </div>
+             
+                <div class="col-6" class="text-center">
+                <button type="button" class="btn btn-outline-info"  style="margin-left: 180px;padding-left: 30px;padding-right:30px ;" data-bs-dismiss="modal" (click)="gotoagence()">Connexion</button>
+              <br><br>
+  
+              </div>
+            
+            </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <a href="" routerLink="/inscrit" style="text-align: center;margin-right: 170px;">{{textsection26.section26}}</a>
+
+    
+         </div>
+  
+    </div></div>
+
+<svg style="margin-top: -670px;" id="bgpoly" class="bgpoly gradienttrans" version="1.1" viewBox="0 0 16276 9164" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+  <style >
+  
+        .str0 {
+        stroke:#FEFEFE;
+        stroke-width:20
+        }
+        .fil0 {
+        fill:none
+        }
+        .fil29 {
+        fill:#0BA44A;
+        fill-rule:nonzero
+        }
+        .fil8 {
+        fill:#187D46;
+        fill-rule:nonzero
+        }
+        .fil9 {
+        fill:#1C6437;
+        fill-rule:nonzero
+        }
+        .fil4 {
+        fill:#205194;
+        fill-rule:nonzero
+        }
+        .fil6 {
+        fill:#2F3659;
+        fill-rule:nonzero
+        }
+        .fil2 {
+        fill:#2F3F6F;
+        fill-rule:nonzero
+        }
+        .fil5 {
+        fill:#2F98D4;
+        fill-rule:nonzero
+        }
+        .fil33 {
+        fill:#31BEEF;
+        fill-rule:nonzero
+        }
+        .fil43 {
+        fill:#414D7F;
+        fill-rule:nonzero
+        }
+        .fil42 {
+        fill:#436B58;
+        fill-rule:nonzero
+        }
+        .fil7 {
+        fill:#45B4E7;
+        fill-rule:nonzero
+        }
+        .fil36 {
+        fill:#475FA7;
+        fill-rule:nonzero
+        }
+        .fil32 {
+        fill:#5069AF;
+        fill-rule:nonzero
+        }
+        .fil21 {
+        fill:#64272A;
+        fill-rule:nonzero
+        }
+        .fil13 {
+        fill:#67B439;
+        fill-rule:nonzero
+        }
+        .fil22 {
+        fill:#6B2641;
+        fill-rule:nonzero
+        }
+        .fil34 {
+        fill:#6EC8E2;
+        fill-rule:nonzero
+        }
+        .fil25 {
+        fill:#742724;
+        fill-rule:nonzero
+        }
+        .fil28 {
+        fill:#7CBA3B;
+        fill-rule:nonzero
+        }
+        .fil23 {
+        fill:#84294F;
+        fill-rule:nonzero
+        }
+        .fil20 {
+        fill:#87272D;
+        fill-rule:nonzero
+        }
+        .fil12 {
+        fill:#98C03A;
+        fill-rule:nonzero
+        }
+        .fil41 {
+        fill:#AD434A;
+        fill-rule:nonzero
+        }
+        .fil19 {
+        fill:#B82B2E;
+        fill-rule:nonzero
+        }
+        .fil11 {
+        fill:#BCCF1F;
+        fill-rule:nonzero
+        }
+        .fil24 {
+        fill:#C12668;
+        fill-rule:nonzero
+        }
+        .fil30 {
+        fill:#CCCBCA;
+        fill-rule:nonzero
+        }
+        .fil40 {
+        fill:#D63136;
+        fill-rule:nonzero
+        }
+        .fil37 {
+        fill:#D7D900;
+        fill-rule:nonzero
+        }
+        .fil3 {
+        fill:#DBDADB;
+        fill-rule:nonzero
+        }
+        .fil16 {
+        fill:#E1252A;
+        fill-rule:nonzero
+        }
+        .fil27 {
+        fill:#E4E2E4;
+        fill-rule:nonzero
+        }
+        .fil26 {
+        fill:#E6353F;
+        fill-rule:nonzero
+        }
+        .fil14 {
+        fill:#E84F29;
+        fill-rule:nonzero
+        }
+        .fil17 {
+        fill:#EA7E1F;
+        fill-rule:nonzero
+        }
+        .fil35 {
+        fill:#EB5F3F;
+        fill-rule:nonzero
+        }
+        .fil15 {
+        fill:#EC692C;
+        fill-rule:nonzero
+        }
+        .fil31 {
+        fill:#EDEDEF;
+        fill-rule:nonzero
+        }
+        .fil38 {
+        fill:#F18C36;
+        fill-rule:nonzero
+        }
+        .fil10 {
+        fill:#F5BB1B;
+        fill-rule:nonzero
+        }
+        .fil18 {
+        fill:#F6A420;
+        fill-rule:nonzero
+        }
+        .fil39 {
+        fill:#F8B86C;
+        fill-rule:nonzero
+        }
+        .fil1 {
+        fill:#2F3F70;
+        fill-rule:nonzero
+        }
+  
+  </style>
+  </defs>
+
+<polygon class="poly1001 polygone fil26 polyanim" points="16083 9154 16266 9e3 16266 9154" style="fill: rgb(204, 254, 80);"></polygon>
+<polygon class="poly1002 polygone fil27 polyanim" points="16266 8151 16020 7940 16020 8363" style="fill: rgb(234, 82, 78);"></polygon>
+<polygon class="poly1003 polygone fil28 polyanim" points="16020 8786 16266 8574 16266 9e3" style="fill: rgb(166, 122, 150);"></polygon>
+<polygon class="poly1004 polygone fil29 polyanim" points="16266 8574 16020 8363 16020 8786" style="fill: rgb(137, 112, 38);"></polygon>
+<polygon class="poly1005 polygone fil30 polyanim" points="16020 8363 16266 8151 16266 8574" style="fill: rgb(84, 188, 199);"></polygon>
+<polygon class="poly1006 polygone fil26 polyanim" points="12501 9154 12323 9e3 12323 9154" style="fill: rgb(241, 196, 138);"></polygon>
+<polygon class="poly1007 polygone fil27 polyanim" points="12323 8155 12570 7944 12570 8367" style="fill: rgb(137, 93, 99);"></polygon>
+<polygon class="poly1008 polygone fil28 polyanim" points="12570 8790 12323 8578 12323 9e3" style="fill: rgb(211, 57, 18);"></polygon>
+<polygon class="poly1009 polygone fil31 polyanim" points="12206 8478 12206 8678 12323 8578" style="fill: rgb(170, 220, 165);"></polygon>
+<polygon class="poly1010 polygone fil32 polyanim" points="12323 8578 12570 8367 12570 8790" style="fill: rgb(109, 86, 87);"></polygon>
+<polygon class="poly1011 polygone fil30 polyanim" points="12570 8367 12323 8155 12323 8578" style="fill: rgb(29, 152, 149);"></polygon>
+<polygon class="poly1012 polygone fil32 polyanim" points="13131 9154 13309 9154 13309 9e3" style="fill: rgb(134, 211, 5);"></polygon>
+<polygon class="poly1013 polygone fil33 polyanim" points="13062 8790 13309 9e3 13309 8578" style="fill: rgb(120, 16, 147);"></polygon>
+<polygon class="poly1014 polygone fil34 polyanim" points="13062 8790 13309 9e3 13131 9154 13062 9154" style="fill: rgb(171, 232, 3);"></polygon>
+<polygon class="poly1015 polygone fil35 polyanim" points="13062 8367 13309 8578 13309 8155" style="fill: rgb(88, 16, 69);"></polygon>
+<polygon class="poly1016 polygone fil32" points="12994 9154 12816 9e3 12816 9154" style="fill: rgb(143, 6, 99);"></polygon>
+<polygon class="poly1017 polygone fil36 polyanim" points="12638 9154 12816 9e3 12816 9154" style="fill: rgb(96, 106, 134);"></polygon>
+<polygon class="poly1018 polygone fil37 polyanim" points="13062 8790 12816 8578 12816 9e3" style="fill: rgb(104, 25, 229);"></polygon>
+<polygon class="poly1019 polygone fil27" points="12816 8155 12570 7944 12570 8367"></polygon>
+<polygon class="poly1020 polygone fil28 polyanim" points="12570 8790 12816 8578 12816 9e3" style="fill: rgb(164, 241, 88);"></polygon>
+<polygon class="poly1021 polygone fil31 polyanim" points="12816 8578 13062 8367 13062 8790" style="fill: rgb(168, 152, 247);"></polygon>
+<polygon class="poly1022 polygone fil29 polyanim" points="12816 8578 12570 8367 12570 8790" style="fill: rgb(173, 37, 162);"></polygon>
+<polygon class="poly1023 polygone fil30 polyanim" points="12570 8367 12816 8155 12816 8578" style="fill: rgb(81, 24, 200);"></polygon>
+<polygon class="poly1024 polygone fil35 polyanim" points="15956 9154 15773 9154 15773 9e3" style="fill: rgb(240, 25, 211);"></polygon>
+<polygon class="poly1025 polygone fil26 polyanim" points="15773 9e3 15956 9154 16020 9154 16020 8786" style="fill: rgb(115, 237, 26);"></polygon>
+<polygon class="poly1026 polygone fil36 polyanim" points="13555 8790 13309 9e3 13487 9154 13555 9154" style="fill: rgb(154, 56, 97);"></polygon>
+<polygon class="poly1026 polygone fil36 polyanim" points="13555 8790 13309 9e3 13487 9154 13555 9154" style="fill: rgb(17, 29, 234);"></polygon>
+    <polygon class="poly1027 polygone fil36 polyanim" points="13487 9154 13309 9154 13309 9e3" style="fill: rgb(112, 206, 99);"></polygon>
+<polygon class="poly1028 polygone fil29 polyanim" points="14964 9152 14788 9e3 14788 9153" style="fill: rgb(38, 46, 201);"></polygon>
+<polygon class="poly1029 polygone fil29 polyanim" points="14541 8790 14788 9e3 14788 8578" style="fill: rgb(215, 94, 224);"></polygon>
+<polygon class="poly1030 polygone fil36 polyanim" points="15034 8790 14788 9e3 14788 8578" style="fill: rgb(176, 127, 74);"></polygon>
+<polygon class="poly1031 polygone fil38 polyanim" points="13802 9e3 13623 9154 13713 9154 13802 9154" style="fill: rgb(65, 240, 137);"></polygon>
+<polygon class="poly1032 polygone fil39 polyanim" points="15527 8790 15280 9e3 15459 9154 15527 9154" style="fill: rgb(186, 239, 105);"></polygon>
+<polygon class="poly1033 polygone fil28 polyanim" points="13980 9154 13802 9154 13802 9e3" style="fill: rgb(237, 195, 92);"></polygon>
+<polygon class="poly1034 polygone fil40 polyanim" points="13555 8790 13802 9e3 13802 8578" style="fill: rgb(119, 246, 181);"></polygon>
+<polygon class="poly1035 polygone fil39 polyanim" points="14048 8790 13802 9e3 13802 8578" style="fill: rgb(235, 250, 32);"></polygon>
+<polygon class="poly1036 polygone fil41 polyanim" points="14048 8790 14295 9e3 14117 9154 14048 9154" style="fill: rgb(221, 212, 142);"></polygon>
+<polygon class="poly1037 polygone fil26 polyanim" points="14295 8578 14048 8790 14048 8367" style="fill: rgb(222, 240, 231);"></polygon>
+<polygon class="poly1038 polygone fil38 polyanim" points="14117 9154 14295 9153 14295 9e3" style="fill: rgb(170, 78, 195);"></polygon>
+<polygon class="poly1039 polygone fil39 polyanim" points="14048 8790 13802 9e3 13980 9154 14048 9154" style="fill: rgb(44, 42, 61);"></polygon>
+<polygon class="poly1040 polygone fil40 polyanim" points="14541 8790 14295 9e3 14472 9153 14541 9153" style="fill: rgb(98, 203, 189);"></polygon>
+<polygon class="poly1041 polygone fil35 polyanim" points="14472 9153 14295 9153 14295 9e3" style="fill: rgb(215, 50, 198);"></polygon>
+<polygon class="poly1042 polygone fil41 polyanim" points="15527 8790 15773 9e3 15773 8578" style="fill: rgb(84, 226, 245);"></polygon>
+<polygon class="poly1043 polygone fil41 polyanim" points="15773 8578 16020 8789 16020 8790 15773 9e3" style="fill: rgb(127, 87, 2);"></polygon>
+<polygon class="poly1044 polygone fil27 polyanim" points="15280 8155 15527 8367 15527 7944" style="fill: rgb(108, 241, 236);"></polygon>
+<polygon class="poly1045 polygone fil26 polyanim" points="15527 8367 15773 8578 15773 8155" style="fill: rgb(247, 95, 193);"></polygon>
+<polygon class="poly1046 polygone fil30 polyanim" points="15773 8155 16020 8367 15773 8578" style="fill: rgb(98, 116, 74);"></polygon>
+<polygon class="poly1047 polygone fil35 polyanim" points="14048 8790 14295 9e3 14295 8578" style="fill: rgb(104, 238, 59);"></polygon>
+<polygon class="poly1048 polygone fil41 polyanim" points="15773 8578 15527 8367 15527 8790" style="fill: rgb(166, 126, 2);"></polygon>
+<polygon class="poly1049 polygone fil28 polyanim" points="14788 8578 15034 8790 15034 8367" style="fill: rgb(105, 168, 94);"></polygon>
+<polygon class="poly1050 polygone fil26 polyanim" points="15527 8367 15280 8155 15280 8578" style="fill: rgb(74, 39, 158);"></polygon>
+<polygon class="poly1051 polygone fil42 polyanim" points="15280 8578 15034 8790 15034 8367" style="fill: rgb(179, 140, 195);"></polygon>
+<polygon class="poly1052 polygone fil37 polyanim" points="15034 8790 14788 9e3 14788 8578" style="fill: rgb(196, 3, 155);"></polygon>
+<polygon class="poly1053 polygone fil37 polyanim" points="14295 8578 14541 8790 14541 8367" style="fill: rgb(83, 69, 154);"></polygon>
+<polygon class="poly1054 polygone fil27 polyanim" points="14788 8578 14541 8790 14541 8367" style="fill: rgb(248, 39, 205);"></polygon>
+<polygon class="poly1055 polygone fil29 polyanim" points="15034 8790 15280 9e3 15280 8578" style="fill: rgb(147, 0, 228);"></polygon>
+<polygon class="poly1056 polygone fil42 polyanim" points="15034 8790 15034 9154 14987 9152 14964 9152 14788 9e3" style="fill: rgb(235, 196, 196);"></polygon>
+<polygon class="poly1057 polygone fil36 polyanim" points="13555 8790 13309 9e3 13309 8578" style="fill: rgb(214, 96, 60);"></polygon>
+<polygon class="poly1058 polygone fil27 polyanim" points="14048 8367 14295 8578 14295 8155" style="fill: rgb(165, 171, 82);"></polygon>
+<polygon class="poly1059 polygone fil35 polyanim" points="15034 8367 15280 8578 15280 8155" style="fill: rgb(26, 12, 88);"></polygon>
+<polygon class="poly1060 polygone fil27 polyanim" points="14541 8367 14295 8578 14295 8155" style="fill: rgb(114, 246, 140);"></polygon>
+<polygon class="poly1061 polygone fil43 polyanim" points="13309 8578 13555 8790 13555 8367" style="fill: rgb(17, 32, 33);"></polygon>
+<polygon class="poly1062 polygone fil30 polyanim" points="14541 8367 14788 8578 14788 8155" style="fill: rgb(164, 35, 242);"></polygon>
+<polygon class="poly1063 polygone fil43 polyanim" points="13555 8367 13309 8578 13309 8155" style="fill: rgb(133, 83, 87);"></polygon>
+<polygon class="poly1064 polygone fil27 polyanim" points="14048 8367 13802 8578 13802 8155" style="fill: rgb(19, 1, 197);"></polygon>
+<polygon class="poly1065 polygone fil31 polyanim" points="15100 9154 15281 9e3 15281 9154" style="fill: rgb(144, 158, 253);"></polygon>
+<polygon class="poly1066 polygone fil27 polyanim" points="15773 8155 16020 7944 16020 8367" style="fill: rgb(182, 102, 116);"></polygon>
+<polygon class="poly1067 polygone fil28 polyanim" points="13802 8578 13555 8367 13555 8790" style="fill: rgb(214, 125, 154);"></polygon>
+<polygon class="poly1068 polygone fil26 polyanim" points="14541 8790 14541 9154 14544 9154 14609 9154 14788 9e3" style="fill: rgb(196, 108, 47);"></polygon>
+<polygon class="poly1069 polygone fil26 polyanim" points="12140 9154 12323 9e3 12323 9154" style="fill: rgb(187, 129, 251);"></polygon>
+<polygon class="poly1070 polygone fil27 polyanim" points="12323 8151 12077 7940 12077 8363" style="fill: rgb(214, 211, 52);"></polygon>
+<polygon class="poly1071 polygone fil28 polyanim" points="12077 8786 12323 8574 12323 9e3" style="fill: rgb(94, 227, 212);"></polygon>
+<polygon class="poly1072 polygone fil29 polyanim" points="12323 8574 12077 8363 12077 8786" style="fill: rgb(125, 57, 171);"></polygon>
+<polygon class="poly1073 polygone fil30 polyanim" points="12077 8363 12323 8151 12323 8574" style="fill: rgb(118, 113, 248);"></polygon>
+<polygon class="poly1074 polygone fil26 polyanim" points="8559 9154 8380 9e3 8380 9154" style="fill: rgb(249, 127, 179);"></polygon>
+<polygon class="poly1075 polygone fil27 polyanim" points="8380 8155 8627 7944 8627 8367" style="fill: rgb(129, 223, 244);"></polygon>
+<polygon class="poly1076 polygone fil28 polyanim" points="8627 8790 8380 8578 8380 9e3" style="fill: rgb(172, 141, 15);"></polygon>
+<polygon class="poly1077 polygone fil32 polyanim" points="8380 8578 8627 8367 8627 8790" style="fill: rgb(74, 66, 60);"></polygon>
+<polygon class="poly1078 polygone fil30 polyanim" points="8627 8367 8380 8155 8380 8578" style="fill: rgb(38, 165, 61);"></polygon>
+<polygon class="poly1079 polygone fil32 polyanim" points="9188 9154 9366 9154 9366 9e3" style="fill: rgb(190, 79, 72);"></polygon>
+<polygon class="poly1080 polygone fil33 polyanim" points="9120 8790 9366 9e3 9366 8578" style="fill: rgb(42, 172, 236);"></polygon>
+<polygon class="poly1081 polygone fil34 polyanim" points="9120 8790 9366 9e3 9188 9154 9120 9154" style="fill: rgb(28, 83, 142);"></polygon>
+<polygon class="poly1082 polygone fil35" points="9120 8367 9366 8578 9366 8155" style="fill: rgb(37, 19, 138);"></polygon>
+<polygon class="poly1083 polygone fil32 polyanim" points="9051 9154 8873 9e3 8873 9154" style="fill: rgb(225, 109, 68);"></polygon>
+<polygon class="poly1084 polygone fil36 polyanim" points="8695 9154 8873 9e3 8873 9154" style="fill: rgb(63, 82, 252);"></polygon>
+<polygon class="poly1085 polygone fil37 polyanim" points="9120 8790 8873 8578 8873 9e3" style="fill: rgb(224, 28, 242);"></polygon>
+<polygon class="poly1086 polygone fil27 polyanim" points="8873 8155 8627 7944 8627 8367" style="fill: rgb(155, 97, 189);"></polygon>
+<polygon class="poly1087 polygone fil28 polyanim" points="8627 8790 8873 8578 8873 9e3" style="fill: rgb(49, 198, 68);"></polygon>
+<polygon class="poly1088 polygone fil31 polyanim" points="8873 8578 9120 8367 9120 8790" style="fill: rgb(176, 90, 181);"></polygon>
+<polygon class="poly1088 polygone fil31 polyanim" points="8873 8578 9120 8367 9120 8790" style="fill: rgb(187, 27, 176);"></polygon>
+<polygon class="poly1089 polygone fil29 polyanim" points="8873 8578 8627 8367 8627 8790" style="fill: rgb(97, 219, 229);"></polygon>
+<polygon class="poly1090 polygone fil30 polyanim" points="8627 8367 8873 8155 8873 8578" style="fill: rgb(127, 95, 249);"></polygon>
+<polygon class="poly1091 polygone fil35 polyanim" points="12013 9154 11830 9154 11830 9e3" style="fill: rgb(99, 40, 9);"></polygon>
+<polygon class="poly1092 polygone fil26 polyanim" points="11830 9e3 12013 9154 12077 9154 12077 8786" style="fill: rgb(143, 91, 35);"></polygon>
+<polygon class="poly1093 polygone fil36 polyanim" points="9612 8790 9366 9e3 9544 9154 9612 9154" style="fill: rgb(18, 238, 149);"></polygon>
+<polygon class="poly1094 polygone fil36 polyanim" points="9544 9154 9366 9154 9366 9e3" style="fill: rgb(158, 198, 35);"></polygon>
+<polygon class="poly1095 polygone fil29 polyanim" points="11021 9152 10845 9e3 10845 9153" style="fill: rgb(48, 26, 105);"></polygon>
+<polygon class="poly1096 polygone fil29 polyanim" points="10598 8790 10845 9e3 10845 8578" style="fill: rgb(159, 32, 138);"></polygon>
+<polygon class="poly1097 polygone fil36 polyanim" points="11091 8790 10845 9e3 10845 8578" style="fill: rgb(32, 136, 61);"></polygon>
+<polygon class="poly1098 polygone fil38" points="9859 9e3 9681 9154 9770 9154 9859 9154" style="fill: rgb(36, 33, 213);"></polygon>
+<polygon class="poly1099 polygone fil39 polyanim" points="11584 8790 11338 9e3 11516 9154 11584 9154" style="fill: rgb(135, 238, 78);"></polygon>
+<polygon class="poly1100 polygone fil28 polyanim" points="1e4 9154 9859 9154 9859 9e3" style="fill: rgb(243, 120, 168);"></polygon>
+<polygon class="poly1101 polygone fil40 polyanim" points="9612 8790 9859 9e3 9859 8578" style="fill: rgb(101, 20, 129);"></polygon>
+<polygon class="poly1102 polygone fil39 polyanim" points="10105 8790 9859 9e3 9859 8578" style="fill: rgb(226, 208, 207);"></polygon>
+<polygon class="poly1103 polygone fil41" points="10105 8790 10352 9e3 10174 9154 10105 9154" style="fill: rgb(244, 108, 143);"></polygon>
+<polygon class="poly1104 polygone fil26" points="10352 8578 10105 8790 10105 8367" style="fill: rgb(106, 130, 163);"></polygon>
+<polygon class="poly1105 polygone fil38 polyanim" points="10174 9154 10352 9153 10352 9e3" style="fill: rgb(150, 170, 196);"></polygon>
+<polygon class="poly1106 polygone fil39 polyanim" points="10105 8790 9859 9e3 1e4 9154 10105 9154" style="fill: rgb(209, 35, 221);"></polygon>
+<polygon class="poly1107 polygone fil40 polyanim" points="10598 8790 10352 9e3 10529 9153 10598 9153" style="fill: rgb(148, 74, 106);"></polygon>
+<polygon class="poly1108 polygone fil35 polyanim" points="10529 9153 10352 9153 10352 9e3" style="fill: rgb(165, 70, 51);"></polygon>
+<polygon class="poly1109 polygone fil41 polyanim" points="11584 8790 11830 9e3 11830 8578" style="fill: rgb(170, 119, 121);"></polygon>
+<polygon class="poly1110 polygone fil41 polyanim" points="11830 8578 12077 8789 12077 8790 11830 9e3" style="fill: rgb(215, 68, 243);"></polygon>
+<polygon class="poly1111 polygone fil27 polyanim" points="11338 8155 11584 8367 11584 7944" style="fill: rgb(39, 159, 170);"></polygon>
+<polygon class="poly1112 polygone fil26 polyanim" points="11584 8367 11830 8578 11830 8155" style="fill: rgb(214, 169, 105);"></polygon>
+<polygon class="poly1113 polygone fil30 polyanim" points="11830 8155 12077 8367 11830 8578" style="fill: rgb(236, 56, 54);"></polygon>
+<polygon class="poly1114 polygone fil35 polyanim" points="10105 8790 10352 9e3 10352 8578" style="fill: rgb(27, 58, 30);"></polygon>
+<polygon class="poly1115 polygone fil41 polyanim" points="11830 8578 11584 8367 11584 8790" style="fill: rgb(87, 155, 157);"></polygon>
+<polygon class="poly1116 polygone fil28 polyanim" points="10845 8578 11091 8790 11091 8367" style="fill: rgb(29, 20, 85);"></polygon>
+<polygon class="poly1117 polygone fil26 polyanim" points="11584 8367 11338 8155 11338 8578" style="fill: rgb(134, 16, 38);"></polygon>
+<polygon class="poly1118 polygone fil42 polyanim" points="11338 8578 11091 8790 11091 8367" style="fill: rgb(155, 21, 32);"></polygon>
+<polygon class="poly1119 polygone fil37 polyanim" points="11091 8790 10845 9e3 10845 8578" style="fill: rgb(157, 11, 228);"></polygon>
+<polygon class="poly1120 polygone fil37 polyanim" points="10352 8578 10598 8790 10598 8367" style="fill: rgb(240, 71, 58);"></polygon>
+<polygon class="poly1121 polygone fil27 polyanim" points="10845 8578 10598 8790 10598 8367" style="fill: rgb(118, 83, 18);"></polygon>
+<polygon class="poly1122 polygone fil29 polyanim" points="11091 8790 11338 9e3 11338 8578" style="fill: rgb(136, 139, 208);"></polygon>
+
+<polygon class="poly1123 polygone fil42 polyanim" points="11091 8790 11091 9154 11044 9152 11021 9152 10845 9e3" style="fill: rgb(110, 239, 206);"></polygon>
+<polygon class="poly1124 polygone fil36 polyanim" points="9612 8790 9366 9e3 9366 8578" style="fill: rgb(80, 128, 21);"></polygon>
+<polygon class="poly1125 polygone fil27 polyanim" points="10105 8367 10352 8578 10352 8155" style="fill: rgb(173, 161, 200);"></polygon>
+<polygon class="poly1126 polygone fil35 polyanim" points="11091 8367 11338 8578 11338 8155" style="fill: rgb(104, 156, 45);"></polygon>
+<polygon class="poly1127 polygone fil27 polyanim" points="10598 8367 10352 8578 10352 8155" style="fill: rgb(176, 201, 191);"></polygon>
+<polygon class="poly1128 polygone fil43 polyanim" points="9366 8578 9612 8790 9612 8367" style="fill: rgb(141, 74, 239);"></polygon>
+<polygon class="poly1129 polygone fil30 polyanim" points="10598 8367 10845 8578 10845 8155" style="fill: rgb(158, 109, 66);"></polygon>
+<polygon class="poly1130 polygone fil43 polyanim" points="9612 8367 9366 8578 9366 8155" style="fill: rgb(100, 109, 59);"></polygon>
+<polygon class="poly1131 polygone fil27 polyanim" points="10105 8367 9859 8578 9859 8155" style="fill: rgb(111, 96, 135);"></polygon>
+<polygon class="poly1132 polygone fil31" points="11157 9154 11338 9e3 11338 9154" style="fill: rgb(180, 69, 156);"></polygon>
+<polygon class="poly1133 polygone fil27 polyanim" points="11830 8155 12077 7944 12077 8367" style="fill: rgb(254, 22, 103);"></polygon>
+<polygon class="poly1134 polygone fil28 polyanim" points="9859 8578 9612 8367 9612 8790" style="fill: rgb(38, 13, 28);"></polygon>
+<polygon class="poly1135 polygone fil26 polyanim" points="10598 8790 10598 9154 10602 9154 10666 9154 10845 9e3" style="fill: rgb(225, 188, 144);"></polygon>
+<polygon class="poly1136 polygone fil26 polyanim" points="8197 9154 8380 9e3 8380 9154" style="fill: rgb(213, 174, 152);"></polygon>
+<polygon class="poly1137 polygone fil27" points="8380 8151 8134 7940 8134 8363" style="fill: rgb(237, 224, 2);"></polygon>
+<polygon class="poly1138 polygone fil28 polyanim" points="8134 8786 8380 8574 8380 9e3" style="fill: rgb(85, 121, 30);"></polygon>
+<polygon class="poly1139 polygone fil29 polyanim" points="8380 8574 8134 8363 8134 8786" style="fill: rgb(255, 201, 207);"></polygon>
+<polygon class="poly1140 polygone fil30 polyanim" points="8134 8363 8380 8151 8380 8574" style="fill: rgb(145, 42, 41);"></polygon>
+<polygon class="poly1141 polygone fil26 polyanim" points="4616 9154 4437 9e3 4437 9154" style="fill: rgb(191, 202, 244);"></polygon>
+<polygon class="poly1142 polygone fil27 polyanim" points="4437 8155 4684 7944 4684 8367" style="fill: rgb(89, 201, 109);"></polygon>
+<polygon class="poly1143 polygone fil28 polyanim" points="4684 8790 4437 8578 4437 9e3" style="fill: rgb(36, 217, 153);"></polygon>
+<polygon class="poly1144 polygone fil31 polyanim" points="4321 8478 4321 8678 4437 8578" style="fill: rgb(107, 186, 100);"></polygon>
+<polygon class="poly1145 polygone fil32 polyanim" points="4437 8578 4684 8367 4684 8790" style="fill: rgb(218, 60, 1);"></polygon>
+<polygon class="poly1146 polygone fil30 polyanim" points="4684 8367 4437 8155 4437 8578" style="fill: rgb(225, 220, 67);"></polygon>
+<polygon class="poly1147 polygone fil32 polyanim" points="5245 9154 5423 9154 5423 9e3" style="fill: rgb(61, 189, 107);"></polygon>
+<polygon class="poly1148 polygone fil33 polyanim" points="5177 8790 5423 9e3 5423 8578" style="fill: rgb(116, 99, 28);"></polygon>
+<polygon class="poly1149 polygone fil34 polyanim" points="5177 8790 5423 9e3 5245 9154 5177 9154" style="fill: rgb(154, 77, 223);"></polygon>
+<polygon class="poly1150 polygone fil35 polyanim" points="5177 8367 5423 8578 5423 8155" style="fill: rgb(78, 183, 150);"></polygon>
+<polygon class="poly1151 polygone fil32 polyanim" points="5109 9154 4930 9e3 4930 9154" style="fill: rgb(172, 175, 66);"></polygon>
+<polygon class="poly1152 polygone fil36 polyanim" points="4752 9154 4930 9e3 4930 9154" style="fill: rgb(181, 187, 13);"></polygon>
+<polygon class="poly1153 polygone fil37 polyanim" points="5177 8790 4930 8578 4930 9e3" style="fill: rgb(213, 253, 51);"></polygon>
+<polygon class="poly1154 polygone fil27 polyanim" points="4930 8155 4684 7944 4684 8367" style="fill: rgb(141, 185, 188);"></polygon>
+
+<polygon class="poly1155 polygone fil28 polyanim" points="4684 8790 4930 8578 4930 9e3" style="fill: rgb(179, 104, 65);"></polygon>
+<polygon class="poly1156 polygone fil31 polyanim" points="4930 8578 5177 8367 5177 8790" style="fill: rgb(200, 199, 241);"></polygon>
+<polygon class="poly1157 polygone fil29 polyanim" points="4930 8578 4684 8367 4684 8790" style="fill: rgb(42, 229, 232);"></polygon>
+<polygon class="poly1158 polygone fil30" points="4684 8367 4930 8155 4930 8578" style="fill: rgb(34, 46, 168);"></polygon>
+<polygon class="poly1159 polygone fil35 polyanim" points="8070 9154 7888 9154 7888 9e3" style="fill: rgb(58, 225, 229);"></polygon>
+<polygon class="poly1160 polygone fil26 polyanim" points="7888 9e3 8070 9154 8134 9154 8134 8786" style="fill: rgb(82, 63, 80);"></polygon>
+<polygon class="poly1161 polygone fil36 polyanim" points="5670 8790 5423 9e3 5602 9154 5670 9154" style="fill: rgb(39, 44, 238);"></polygon>
+    <polygon class="poly1162 polygone fil36 polyanim" points="5602 9154 5423 9154 5423 9e3" style="fill: rgb(118, 155, 57);"></polygon>
+
+<polygon class="poly1163 polygone fil29 polyanim" points="7078 9152 6902 9e3 6902 9153" style="fill: rgb(25, 107, 89);"></polygon>
+<polygon class="poly1164 polygone fil29 polyanim" points="6655 8790 6902 9e3 6902 8578" style="fill: rgb(68, 200, 244);"></polygon>
+<polygon class="poly1165 polygone fil36 polyanim" points="7148 8790 6902 9e3 6902 8578" style="fill: rgb(174, 12, 186);"></polygon>
+<polygon class="poly1166 polygone fil38 polyanim" points="5916 9e3 5738 9154 5827 9154 5916 9154" style="fill: rgb(142, 199, 131);"></polygon>
+<polygon class="poly1167 polygone fil39 polyanim" points="7641 8790 7395 9e3 7573 9154 7641 9154" style="fill: rgb(148, 121, 103);"></polygon>
+<polygon class="poly1168 polygone fil28" points="6094 9154 5916 9154 5916 9e3" style="fill: rgb(248, 30, 48);"></polygon>
+<polygon class="poly1169 polygone fil40 polyanim" points="5670 8790 5916 9e3 5916 8578" style="fill: rgb(48, 229, 208);"></polygon>
+<polygon class="poly1170 polygone fil39 polyanim" points="6163 8790 5916 9e3 5916 8578" style="fill: rgb(128, 64, 162);"></polygon>
+<polygon class="poly1171 polygone fil41 polyanim" points="6163 8790 6409 9e3 6231 9154 6163 9154" style="fill: rgb(99, 208, 202);"></polygon>
+<polygon class="poly1172 polygone fil26 polyanim" points="6409 8578 6163 8790 6163 8367" style="fill: rgb(132, 238, 167);"></polygon>
+<polygon class="poly1173 polygone fil38 polyanim" points="6231 9154 6409 9153 6409 9e3" style="fill: rgb(129, 95, 45);"></polygon>
+<polygon class="poly1174 polygone fil39 polyanim" points="6163 8790 5916 9e3 6094 9154 6163 9154" style="fill: rgb(106, 82, 75);"></polygon>
+<polygon class="poly1175 polygone fil40 polyanim" points="6655 8790 6409 9e3 6586 9153 6655 9153" style="fill: rgb(198, 114, 51);"></polygon>
+<polygon class="poly1176 polygone fil35 polyanim" points="6586 9153 6409 9153 6409 9e3" style="fill: rgb(182, 198, 135);"></polygon>
+<polygon class="poly1177 polygone fil41 polyanim" points="7641 8790 7888 9e3 7888 8578" style="fill: rgb(250, 191, 252);"></polygon>
+<polygon class="poly1178 polygone fil41 polyanim" points="7888 8578 8134 8789 8134 8790 7888 9e3" style="fill: rgb(246, 133, 117);"></polygon>
+<polygon class="poly1179 polygone fil27 polyanim" points="7395 8155 7641 8367 7641 7944" style="fill: rgb(143, 165, 147);"></polygon>
+<polygon class="poly1180 polygone fil26 polyanim" points="7641 8367 7888 8578 7888 8155" style="fill: rgb(34, 219, 48);"></polygon>
+<polygon class="poly1181 polygone fil30 polyanim" points="7888 8155 8134 8367 7888 8578" style="fill: rgb(42, 155, 149);"></polygon>
+<polygon class="poly1182 polygone fil35 polyanim" points="6163 8790 6409 9e3 6409 8578" style="fill: rgb(22, 32, 143);"></polygon>
+<polygon class="poly1183 polygone fil41 polyanim" points="7888 8578 7641 8367 7641 8790" style="fill: rgb(153, 145, 206);"></polygon>
+
+<polygon class="poly1184 polygone fil28 polyanim" points="6902 8578 7148 8790 7148 8367" style="fill: rgb(154, 32, 235);"></polygon>
+<polygon class="poly1185 polygone fil26 polyanim" points="7641 8367 7395 8155 7395 8578" style="fill: rgb(245, 119, 119);"></polygon>
+<polygon class="poly1186 polygone fil42 polyanim" points="7395 8578 7148 8790 7148 8367" style="fill: rgb(228, 136, 14);"></polygon>
+<polygon class="poly1187 polygone fil37 polyanim" points="7148 8790 6902 9e3 6902 8578" style="fill: rgb(135, 191, 101);"></polygon>
+<polygon class="poly1188 polygone fil37 polyanim" points="6409 8578 6655 8790 6655 8367" style="fill: rgb(116, 171, 140);"></polygon>
+<polygon class="poly1189 polygone fil27 polyanim" points="6902 8578 6655 8790 6655 8367" style="fill: rgb(135, 36, 6);"></polygon>
+<polygon class="poly1190 polygone fil29 polyanim" points="7148 8790 7395 9e3 7395 8578" style="fill: rgb(111, 111, 219);"></polygon>
+<polygon class="poly1191 polygone fil42 polyanim" points="7148 8790 7148 9154 7101 9152 7078 9152 6902 9e3" style="fill: rgb(93, 60, 214);"></polygon>
+<polygon class="poly1192 polygone fil36 polyanim" points="5670 8790 5423 9e3 5423 8578" style="fill: rgb(240, 150, 189);"></polygon>
+<polygon class="poly1193 polygone fil27 polyanim" points="6163 8367 6409 8578 6409 8155" style="fill: rgb(194, 124, 220);"></polygon>
+<polygon class="poly1194 polygone fil35 polyanim" points="7148 8367 7395 8578 7395 8155" style="fill: rgb(219, 246, 12);"></polygon>
+<polygon class="poly1195 polygone fil27 polyanim" points="6655 8367 6409 8578 6409 8155" style="fill: rgb(75, 127, 68);"></polygon>
+<polygon class="poly1196 polygone fil43 polyanim" points="5423 8578 5670 8790 5670 8367" style="fill: rgb(31, 47, 28);"></polygon>
+<polygon class="poly1197 polygone fil30 polyanim" points="6655 8367 6902 8578 6902 8155" style="fill: rgb(62, 252, 148);"></polygon>
+<polygon class="poly1198 polygone fil43 polyanim" points="5670 8367 5423 8578 5423 8155" style="fill: rgb(245, 190, 39);"></polygon>
+<polygon class="poly1199 polygone fil27 polyanim" points="6163 8367 5916 8578 5916 8155" style="fill: rgb(92, 179, 2);"></polygon>
+<polygon class="poly1200 polygone fil31 polyanim" points="7214 9154 7395 9e3 7395 9154" style="fill: rgb(206, 202, 129);"></polygon>
+<polygon class="poly1201 polygone fil27 polyanim" points="7887 8155 8134 7944 8134 8367" style="fill: rgb(74, 248, 163);"></polygon>
+<polygon class="poly1202 polygone fil28 polyanim" points="5916 8578 5670 8367 5670 8790" style="fill: rgb(229, 19, 40);"></polygon>
+<polygon class="poly1203 polygone fil26 polyanim" points="6655 8790 6655 9154 6659 9154 6724 9154 6902 9e3" style="fill: rgb(219, 221, 72);"></polygon>
+<polygon class="poly1204 polygone fil26 polyanim" points="4254 9154 4437 9e3 4437 9154" style="fill: rgb(60, 54, 61);"></polygon>
+<polygon class="poly1205 polygone fil27 polyanim" points="4437 8151 4191 7940 4191 8363" style="fill: rgb(174, 106, 178);"></polygon>
+<polygon class="poly1206 polygone fil28 polyanim" points="4191 8786 4437 8574 4437 9e3" style="fill: rgb(252, 27, 39);"></polygon>
+<polygon class="poly1207 polygone fil29 polyanim" points="4437 8574 4191 8363 4191 8786" style="fill: rgb(148, 253, 164);"></polygon>
+<polygon class="poly1208 polygone fil30 polyanim" points="4191 8363 4437 8151 4437 8574" style="fill: rgb(195, 103, 7);"></polygon>
+<polygon class="poly1209 polygone fil26 polyanim" points="673 9154 495 9e3 495 9154" style="fill: rgb(81, 220, 110);"></polygon>
+<polygon class="poly1210 polygone fil27 polyanim" points="495 8155 741 7944 741 8367" style="fill: rgb(65, 14, 6);"></polygon>
+<polygon class="poly1211 polygone fil28 polyanim" points="741 8790 495 8578 495 9e3" style="fill: rgb(193, 61, 124);"></polygon>
+<polygon class="poly1212 polygone fil32 polyanim" points="495 8578 741 8367 741 8790" style="fill: rgb(160, 115, 148);"></polygon>
+<polygon class="poly1213 polygone fil30 polyanim" points="741 8367 495 8155 495 8578" style="fill: rgb(144, 84, 95);"></polygon>
+<polygon class="poly1214 polygone fil32 polyanim" points="1302 9154 1480 9154 1480 9e3" style="fill: rgb(51, 58, 157);"></polygon>
+<polygon class="poly1215 polygone fil33 polyanim" points="1234 8790 1480 9e3 1480 8578" style="fill: rgb(129, 61, 59);"></polygon>
+<polygon class="poly1216 polygone fil34 polyanim" points="1234 8790 1480 9e3 1302 9154 1234 9154" style="fill: rgb(136, 122, 105);"></polygon>
+<polygon class="poly1217 polygone fil32 polyanim" points="1166 9154 988 9e3 988 9154" style="fill: rgb(98, 45, 0);"></polygon>
+<polygon class="poly1218 polygone fil36 polyanim" points="809 9154 988 9e3 988 9154" style="fill: rgb(94, 83, 177);"></polygon>
+<polygon class="poly1219 polygone fil37 polyanim" points="1234 8790 988 8578 988 9e3" style="fill: rgb(112, 243, 23);"></polygon>
+<polygon class="poly1220 polygone fil27 polyanim" points="988 8155 741 7944 741 8367" style="fill: rgb(182, 202, 196);"></polygon>
+<polygon class="poly1221 polygone fil28 polyanim" points="741 8790 988 8578 988 9e3" style="fill: rgb(159, 205, 68);"></polygon>
+<polygon class="poly1222 polygone fil31 polyanim" points="988 8578 1234 8367 1234 8790" style="fill: rgb(69, 167, 237);"></polygon>
+<polygon class="poly1223 polygone fil29 polyanim" points="988 8578 741 8367 741 8790" style="fill: rgb(100, 102, 255);"></polygon>
+<polygon class="poly1224 polygone fil30" points="741 8367 988 8155 988 8578" style="fill: rgb(100, 143, 57);"></polygon>
+<polygon class="poly1225 polygone fil35 polyanim" points="4128 9154 3945 9154 3945 9e3" style="fill: rgb(92, 226, 73);"></polygon>
+<polygon class="poly1226 polygone fil26 polyanim" points="3945 9e3 4128 9154 4191 9154 4191 8786" style="fill: rgb(254, 220, 52);"></polygon>
+<polygon class="poly1227 polygone fil36 polyanim" points="1727 8790 1480 9e3 1659 9154 1727 9154" style="fill: rgb(120, 157, 254);"></polygon>
+<polygon class="poly1228 polygone fil36 polyanim" points="1659 9154 1480 9154 1480 9e3" style="fill: rgb(219, 100, 69);"></polygon>
+<polygon class="poly1229 polygone fil29 polyanim" points="3135 9152 2959 9e3 2959 9153" style="fill: rgb(44, 18, 218);"></polygon>
+<polygon class="poly1230 polygone fil29 polyanim" points="2713 8790 2959 9e3 2959 8578" style="fill: rgb(209, 189, 249);"></polygon>
+<polygon class="poly1231 polygone fil36 polyanim" points="3205 8790 2959 9e3 2959 8578" style="fill: rgb(152, 107, 138);"></polygon>
+<polygon class="poly1232 polygone fil38 polyanim" points="1973 9e3 1795 9154 1884 9154 1973 9154" style="fill: rgb(228, 56, 28);"></polygon>
+<polygon class="poly1233 polygone fil39 polyanim" points="3698 8790 3452 9e3 3630 9154 3698 9154" style="fill: rgb(138, 142, 60);"></polygon>
+<polygon class="poly1234 polygone fil28 polyanim" points="2151 9154 1973 9154 1973 9e3" style="fill: rgb(53, 13, 178);"></polygon>
+<polygon class="poly1235 polygone fil40 polyanim" points="1727 8790 1973 9e3 1973 8578" style="fill: rgb(57, 99, 90);"></polygon>
+<polygon class="poly1236 polygone fil39 polyanim" points="2220 8790 1973 9e3 1973 8578" style="fill: rgb(104, 78, 146);"></polygon>
+<polygon class="poly1237 polygone fil41 polyanim" points="2220 8790 2466 9e3 2288 9154 2220 9154" style="fill: rgb(244, 248, 198);"></polygon>
+<polygon class="poly1238 polygone fil26 polyanim" points="2466 8578 2220 8790 2220 8367" style="fill: rgb(118, 172, 117);"></polygon>
+<polygon class="poly1239 polygone fil38 polyanim" points="2288 9154 2466 9153 2466 9e3" style="fill: rgb(221, 234, 115);"></polygon>
+<polygon class="poly1240 polygone fil39 polyanim" points="2220 8790 1973 9e3 2151 9154 2220 9154" style="fill: rgb(244, 49, 98);"></polygon>
+<polygon class="poly1241 polygone fil40 polyanim" points="2713 8790 2466 9e3 2643 9153 2713 9153" style="fill: rgb(47, 102, 157);"></polygon>
+<polygon class="poly1242 polygone fil35 polyanim" points="2643 9153 2466 9153 2466 9e3" style="fill: rgb(118, 175, 86);"></polygon>
+<polygon class="poly1243 polygone fil41 polyanim" points="3698 8790 3945 9e3 3945 8578" style="fill: rgb(86, 54, 89);"></polygon>
+<polygon class="poly1244 polygone fil41 polyanim" points="3945 8578 4191 8789 4191 8790 3945 9e3" style="fill: rgb(150, 211, 217);"></polygon>
+<polygon class="poly1245 polygone fil27 polyanim" points="3452 8155 3698 8367 3698 7944" style="fill: rgb(200, 95, 41);"></polygon>
+<polygon class="poly1246 polygone fil26 polyanim" points="3698 8367 3945 8578 3945 8155" style="fill: rgb(208, 250, 166);"></polygon>
+<polygon class="poly1247 polygone fil30 polyanim" points="3945 8155 4191 8367 3945 8578" style="fill: rgb(71, 217, 101);"></polygon>
+<polygon class="poly1248 polygone fil35 polyanim" points="2220 8790 2466 9e3 2466 8578" style="fill: rgb(167, 220, 253);"></polygon>
+<polygon class="poly1249 polygone fil41 polyanim" points="3945 8578 3698 8367 3698 8790" style="fill: rgb(40, 106, 1);"></polygon>
+<polygon class="poly1250 polygone fil28 polyanim" points="2959 8578 3205 8790 3205 8367" style="fill: rgb(29, 210, 143);"></polygon>
+<polygon class="poly1251 polygone fil26 polyanim" points="3698 8367 3452 8155 3452 8578" style="fill: rgb(252, 0, 37);"></polygon>
+<polygon class="poly1252 polygone fil42 polyanim" points="3452 8578 3205 8790 3205 8367" style="fill: rgb(42, 51, 185);"></polygon>
+<polygon class="poly1253 polygone fil37 polyanim" points="3205 8790 2959 9e3 2959 8578" style="fill: rgb(150, 164, 6);"></polygon>
+<polygon class="poly1254 polygone fil37 polyanim" points="2466 8578 2713 8790 2713 8367" style="fill: rgb(202, 191, 203);"></polygon>
+<polygon class="poly1255 polygone fil27 polyanim" points="2959 8578 2713 8790 2713 8367" style="fill: rgb(46, 162, 9);"></polygon>
+<polygon class="poly1256 polygone fil29 polyanim" points="3205 8790 3452 9e3 3452 8578" style="fill: rgb(238, 115, 24);"></polygon>
+<polygon class="poly1257 polygone fil42 polyanim" points="3205 8790 3205 9154 3159 9152 3135 9152 2959 9e3" style="fill: rgb(242, 11, 137);"></polygon>
+<polygon class="poly1258 polygone fil36 polyanim" points="1727 8790 1480 9e3 1480 8578" style="fill: rgb(131, 139, 234);"></polygon>
+<polygon class="poly1259 polygone fil27 polyanim" points="2220 8367 2466 8578 2466 8155" style="fill: rgb(255, 206, 198);"></polygon>
+<polygon class="poly1260 polygone fil35 polyanim" points="3205 8367 3452 8578 3452 8155" style="fill: rgb(210, 87, 6);"></polygon>
+<polygon class="poly1261 polygone fil27 polyanim" points="2713 8367 2466 8578 2466 8155" style="fill: rgb(108, 60, 33);"></polygon>
+<polygon class="poly1262 polygone fil43 polyanim" points="1480 8578 1727 8790 1727 8367" style="fill: rgb(174, 17, 0);"></polygon>
+<polygon class="poly1263 polygone fil30 polyanim" points="2713 8367 2959 8578 2959 8155" style="fill: rgb(81, 196, 86);"></polygon>
+<polygon class="poly1264 polygone fil27 polyanim" points="2220 8367 1973 8578 1973 8155" style="fill: rgb(57, 202, 253);"></polygon>
+<polygon class="poly1265 polygone fil31 polyanim" points="3272 9154 3452 9e3 3452 9154" style="fill: rgb(161, 64, 210);"></polygon>
+<polygon class="poly1266 polygone fil27 polyanim" points="3945 8155 4191 7944 4191 8367" style="fill: rgb(197, 219, 39);"></polygon>
+<polygon class="poly1267 polygone fil28 polyanim" points="1973 8578 1727 8367 1727 8790" style="fill: rgb(219, 174, 159);"></polygon>
+
+<polygon class="poly1268 polygone fil26 polyanim" points="2713 8790 2713 9154 2716 9154 2781 9154 2959 9e3" style="fill: rgb(53, 138, 22);"></polygon>
+<polygon class="poly1269 polygone fil36 polyanim" points="316 9154 495 9e3 495 9154" style="fill: rgb(215, 33, 220);"></polygon>
+<polygon class="poly1270 polygone fil27 polyanim" points="495 8155 248 7944 248 8367" style="fill: rgb(253, 219, 121);"></polygon>
+<polygon class="poly1271 polygone fil28 polyanim" points="248 8790 495 8578 495 9e3" style="fill: rgb(120, 135, 105);"></polygon>
+
+<polygon class="poly1272 polygone fil29 polyanim" points="495 8578 248 8367 248 8790" style="fill: rgb(129, 24, 43);"></polygon>
+<polygon class="poly1273 polygone fil30 polyanim" points="248 8367 495 8155 495 8578" style="fill: rgb(71, 87, 2);"></polygon>
+<polygon class="poly1275 polygone fil27 polyanim" points="10 8155 256 7944 256 8367" style="fill: rgb(115, 82, 109);"></polygon>
+<polygon class="poly1276 polygone fil28 polyanim" points="256 8790 10 8578 10 9e3" style="fill: rgb(174, 193, 135);"></polygon>
+<polygon class="poly1277 polygone fil29 polyanim" points="10 8578 256 8367 256 8790" style="fill: rgb(190, 237, 88);"></polygon>
+<polygon class="poly1278 polygone fil30 polyanim" points="256 8367 10 8155 10 8578" style="fill: rgb(183, 26, 185);"></polygon>
+<polygon class="poly1279 polygone fil27 polyanim" points="16020 7944 16266 8155 16020 8367" style="fill: rgb(65, 36, 125);"></polygon>
+<polygon class="poly1280 polygone fil28 polyanim" points="16266 7309 16020 7521 16266 7732" style="fill: rgb(70, 173, 112);"></polygon>
+<polygon class="poly1281 polygone fil29 polyanim" points="16020 7521 16266 7732 16020 7944" style="fill: rgb(174, 214, 106);"></polygon>
+<polygon class="poly1282 polygone fil30 polyanim" points="16266 7732 16020 7944 16266 8155" style="fill: rgb(122, 118, 3);"></polygon>
+<polygon class="poly1283 polygone fil27 polyanim" points="15527 8362 15280 8151 15527 7940" style="fill: rgb(239, 36, 189);"></polygon>
+<polygon class="poly1284 polygone fil26 polyanim" points="15773 8151 15527 7940 15773 7728" style="fill: rgb(189, 172, 154);"></polygon>
+<polygon class="poly1285 polygone fil30 polyanim" points="16020 7939 15773 7728 15773 8151 16020 7940" style="fill: rgb(155, 75, 232);"></polygon>
+<polygon class="poly1286 polygone fil27 polyanim" points="16020 7940 15773 8151 16020 8363" style="fill: rgb(145, 83, 172);"></polygon>
+<polygon class="poly1287 polygone fil27 polyanim" points="256 7955 10 8166 256 8378" style="fill: rgb(53, 139, 228);"></polygon>
+<polygon class="poly1288 polygone fil28 polyanim" points="10 7320 256 7532 10 7743" style="fill: rgb(79, 240, 67);"></polygon>
+<polygon class="poly1289 polygone fil29" points="256 7532 10 7743 256 7955" style="fill: rgb(225, 173, 43);"></polygon>
+
+<polygon class="poly1290 polygone fil30 polyanim" points="10 7743 256 7955 10 8166" style="fill: rgb(25, 16, 218);"></polygon>
+<polygon class="poly1291 polygone fil27 polyanim" points="749 8374 996 8162 749 7951" style="fill: rgb(18, 102, 142);"></polygon>
+<polygon class="poly1292 polygone fil26 polyanim" points="503 8162 749 7951 503 7739" style="fill: rgb(28, 2, 245);"></polygon>
+<polygon class="poly1293 polygone fil30 polyanim" points="503 7739 503 8162 256 7951" style="fill: rgb(224, 194, 249);"></polygon>
+<polygon class="poly1294 polygone fil27 polyanim" points="256 7951 503 8162 256 8374" style="fill: rgb(215, 156, 64);"></polygon>
+
+  
+</svg>
+
+
+
+<div style="position: fixed;bottom: 0;z-index: 2022;">
+    <div style="position: fixed; left: 20px; bottom: 0;"><span style="font-size: 0.75rem;font-family: arial;font-weight: 400;">Powered by </span><a href="http://expressdisplay.net" target="_blank">ExpressDisplay</a></div>
+    <div style="position: fixed; right: 20px; bottom: 0;"><span style="font-size: 0.75rem;font-family: arial;font-weight: 400;"><a style="text-decoration: unset; color: unset;" href="changelog" target="_blank">V1.1.0.0</a></span></div>
+</div>
+
+</form>
+</html>
+
+
+
