@@ -9,7 +9,7 @@ import { SmsService } from './../services/sms.service';
 
 import { fr } from '../langueSetting/fr';
 import { arabe } from '../langueSetting/arabe';
-import { anglais } from '../langueSetting/anglais';
+import { anglais } from '../langueSetting/anglais'; 
 import * as _ from 'lodash';
 import { request } from 'http';
 import { SMS } from '../model/sms.model';
@@ -151,6 +151,8 @@ checkServiceAvailability(prefix: string): boolean{
   let result = false;
   if (this.num_agence) {
     this.ticketService.checkAvailability(now, afterSe3a, 3, this.num_agence, prefix).subscribe((exchange)=>{
+      let exch = exchange;
+      exch.infoxchange = [12, 14]
         if(exchange.infoxchange.length>0){
           result = false;
         }else{
@@ -178,7 +180,7 @@ async checkAvailability(){
     }}
   boutonClique: boolean = false;
 
- saveTicket(event:any){
+ async saveTicket(event:any){
  this.boutonClique = true;
   localStorage.setItem('boutonClique', 'true');
   
@@ -191,17 +193,18 @@ async checkAvailability(){
     request.id_client="123";
     request.id_agence= this.num_agence;
     request.token= "ctKaD7IHbxU:APA91bGoFuaSdhgyRLEi6ofPNP";
-
-    this.services.forEach((service)=>{
+    let isAvailable = true;
+    await this.services.forEach((service)=>{
       if (service.id.toString() == request.id_service) {
         console.log("id= "+service.id.toString());
         console.log("prefiex = "+service.prefixe);
-        if(this.checkServiceAvailability(service.prefixe)){
-          
+        if(!this.checkServiceAvailability(service.prefixe)){
+          isAvailable = false;
+          alert("This service is not available right now");
         }
       }
     });
-   
+   if(isAvailable){
     this.ticketService.reserveTicket(request).subscribe((response: any) => {
       this.ticketResponse = response.infoticket;
       _.debounce(() => {
@@ -217,6 +220,7 @@ async checkAvailability(){
         }
       },300)()
     })
+   }
   } 
 
 
