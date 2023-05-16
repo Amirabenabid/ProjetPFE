@@ -29,7 +29,7 @@ export class ServicesComponent implements OnInit {
  startDate:any;
  rdvRequest: rdvModel;
 endDate:any;
-  services : any []= [];
+  services : servicesModel []= [];
   lastnum: string = "";
   lasttrait:string="";
  
@@ -139,14 +139,38 @@ private getAgenceServices(){
     console.log(response);
     if(this.idService)
     console.log(this.agence.services[this.idService].lastnum);
-    console.log("nbattente :"+response.agence.nbattente)
+    console.log("nbattente :"+response.agence.nbattente);
+    console.log("les services: ");
+    this.services
         })
 }
+
+checkServiceAvailability(prefix: string): boolean{
+  const now = new Date();
+  let afterSe3a = this.addHours(now, 1);
+  let result = false;
+  if (this.num_agence) {
+    this.ticketService.checkAvailability(now, afterSe3a, 3, this.num_agence, prefix).subscribe((exchange)=>{
+        if(exchange.infoxchange.length>0){
+          result = false;
+        }else{
+          result = true;
+        }
+    });
+  }
+  return result;
+}
+ addHours = (date: Date, hours: number): Date => {
+  const result = new Date(date);
+  result.setHours(result.getHours() + hours);
+  return result;
+};
 
 async checkAvailability(){
   this.ticketService.priseRDV(new Date("2020-12-03"), new Date(), 1, "user1", "expressexpress1+").subscribe((result)=>{
     console.log(result);
-  })
+  });
+  
   }
   handleClick(button: any) {
     if (!button.clicked) {
@@ -167,6 +191,16 @@ async checkAvailability(){
     request.id_client="123";
     request.id_agence= this.num_agence;
     request.token= "ctKaD7IHbxU:APA91bGoFuaSdhgyRLEi6ofPNP";
+
+    this.services.forEach((service)=>{
+      if (service.id.toString() == request.id_service) {
+        console.log("id= "+service.id.toString());
+        console.log("prefiex = "+service.prefixe);
+        if(this.checkServiceAvailability(service.prefixe)){
+          
+        }
+      }
+    });
    
     this.ticketService.reserveTicket(request).subscribe((response: any) => {
       this.ticketResponse = response.infoticket;
