@@ -114,9 +114,12 @@ export class IdentifierComponent implements OnInit {
    var request = new SMS() ;
    request.msg=this.msg;
    request.tel = this.tel;
+   localStorage.setItem('numTel', this.tel);
+   console.log('num', this.tel )
    this.SmsService.sendsms(request).subscribe((response: any) => {
     this.msg= response.msg;
     this.tel=response.tel;
+
     _.debounce(() => {
       if(this.SmsService){
         console.log('service',this.SmsService)
@@ -130,9 +133,10 @@ export class IdentifierComponent implements OnInit {
 
 
 gotoagence(){
-  
+
   if (this.codeSaisi === this.codeGenerer) {
     localStorage.setItem('isConnected', 'yes')
+
     console.log("Le code saisi est le même que le code envoyé.");
     this.route.navigate(['agences'])
     // Effectuer les actions souhaitées, par exemple valider une adresse e-mail

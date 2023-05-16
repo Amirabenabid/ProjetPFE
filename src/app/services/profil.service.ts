@@ -18,8 +18,8 @@ export class ProfilService {
   constructor(private http : HttpClient) {
   }
 
-   listeProfil(): Observable<profil[]>{
-    return this.http.get<profil[]>(this.apiURL);
+   listeProfil(numTel : string | null){
+    return this.http.get(this.apiURL+'/'+numTel);
     }
  
   

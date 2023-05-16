@@ -50,7 +50,7 @@ import { GoogleMapComponent } from './google-map/google-map.component';
     AvisComponent,
     TestComponent,
     Test2Component,
-    GoogleMapComponent,       
+    GoogleMapComponent,
  
 
   ],

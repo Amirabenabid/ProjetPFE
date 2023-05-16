@@ -7,6 +7,7 @@ import { ProfilService } from '../services/profil.service';
 import { anglais } from '../langueSetting/anglais';
 import { arabe } from '../langueSetting/arabe';
 import { fr } from '../langueSetting/fr';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-compte',
   templateUrl: './compte.component.html',
@@ -21,7 +22,7 @@ export class CompteComponent implements OnInit {
   auth : string | null ="";
 
   num_ticket: string= "";
-  profil?: profil[]; 
+profil : any ;
   historiqueModel: historiqueModel;
   num_agence: string="";
   date_print: string ="";
@@ -30,20 +31,43 @@ export class CompteComponent implements OnInit {
   jour_semaine:string="";
   nom_agence:string = "";
   HistoriqueService: any;
-  
+  selectedFile: File | null = null;
+
   textsection1:any;textsection2:any;textsection3:any;
    textsection4:any;  textsection5:any;
   textsection6:any;  textsection7:any;  textsection8:any;
   textsection9:any;  textsection10:any;   textsection11:any;  textsection12:any; 
   textsection13:any;  textsection14:any;   textsection15:any;  textsection16:any;  textsection17:any;
-  textsection18:any;  textsection19:any;
+  textsection18:any;  textsection19:any;  textsection27:any;  textsection28:any;  textsection29:any;  textsection30:any;
+  textsection31:any;  textsection32:any; 
+  newprofil = new profil();
 
-  constructor( private router: Router, private historiqueService:HistoriqueService,private profilService: ProfilService) {
+  constructor( private router: Router,private http: HttpClient, private historiqueService:HistoriqueService,private profilService: ProfilService) {
     this.historiqueModel= {} as historiqueModel;
     this.historiqueResponse= {} as historiqueResponse;
 
    }
+   onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0];
+  }
 
+  onSubmit() {
+    if (!this.selectedFile) {
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', this.selectedFile);
+
+    this.http.post<any>('http://localhost:8080/api/upload', formData).subscribe(
+      (response) => {
+        console.log('Téléchargement réussi', response);
+      },
+      (error) => {
+        console.error('Erreur lors du téléchargement', error);
+      }
+    );
+  }
   ngOnInit(): void {
     localStorage.setItem('lang','2');
     this.textsection1 = fr.compte[0];
@@ -65,7 +89,12 @@ export class CompteComponent implements OnInit {
     this.textsection17=fr.compte[16];
     this.textsection18=fr.compte[17];
     this.textsection19=fr.compte[18];
-
+    this.textsection27 = fr.ajouter[0];
+    this.textsection28=fr.ajouter[1];
+    this.textsection29=fr.ajouter[2];
+    this.textsection30 = fr.ajouter[3];
+    this.textsection31=fr.ajouter[4];
+    this.textsection32=fr.ajouter[5];
     console.log('fr',fr.compte)
    
     this.id_client= "123";
@@ -100,7 +129,12 @@ export class CompteComponent implements OnInit {
     this.textsection17=arabe.compte[16];
     this.textsection18=arabe.compte[17];
     this.textsection19=arabe.compte[18];
-
+    this.textsection27 = arabe.ajouter[0];
+    this.textsection28=arabe.ajouter[1];
+    this.textsection29=arabe.ajouter[2];
+    this.textsection30 = arabe.ajouter[3];
+    this.textsection31=arabe.ajouter[4];
+    this.textsection32=arabe.ajouter[5];
   }
   setLangueFrancais(){
     localStorage.setItem('lang','2');
@@ -123,7 +157,12 @@ export class CompteComponent implements OnInit {
     this.textsection17=fr.compte[16];
     this.textsection18=fr.compte[17];
     this.textsection19=fr.compte[18];
-
+    this.textsection27 = fr.ajouter[0];
+    this.textsection28=fr.ajouter[1];
+    this.textsection29=fr.ajouter[2];
+    this.textsection30 = fr.ajouter[3];
+    this.textsection31=fr.ajouter[4];
+    this.textsection32=fr.ajouter[5];
 
   
   }
@@ -148,7 +187,12 @@ export class CompteComponent implements OnInit {
     this.textsection17=anglais.compte[16];
     this.textsection18=anglais.compte[17];
     this.textsection19=anglais.compte[18];
-
+    this.textsection27 = anglais.ajouter[0];
+    this.textsection28=anglais.ajouter[1];
+    this.textsection29=anglais.ajouter[2];
+    this.textsection30 = anglais.ajouter[3];
+    this.textsection31=anglais.ajouter[4];
+    this.textsection32=anglais.ajouter[5];
   }
 
     getnumAgence(event:any){
@@ -165,20 +209,34 @@ export class CompteComponent implements OnInit {
     }) 
   }
   chargerprofils(){
-    this.profilService.listeProfil().subscribe(profs => {
+    var numTel = localStorage.getItem('numTel');
+    console.log('tel', numTel)
+    this.profilService.listeProfil(numTel).subscribe(profs => {
       console.log(profs);
       this.profil = profs;
       });
 }
+update(){
+  console.log('test')
+}
+add(){
+  
+}
 getdeconnect(){
    
   localStorage.removeItem('isConnected');
-  
+  localStorage.removeItem('reserver');
   this.historiqueService.getReservation(this.id_client).subscribe((response: any) => {
     this.tickets = response.tickets;
     console.log('tickets',this.tickets)
 
   }) 
 }
-
+addprofil(){
+  
+  this.profilService.ajouterProfil(this.newprofil).subscribe(prof => {
+  console.log(prof);
+  this.router.navigate(['profils']);
+  });
+  }
 }

@@ -1,5 +1,9 @@
 
- 
+ .transparent {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 /* go2top */
 .go2top,
 .go2top:focus {

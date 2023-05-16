@@ -5,12 +5,15 @@ import { TicketService } from '../services/ticket.service';
 import { AgenceService } from '../services/agence.service'; 
 import { Location } from '@angular/common';
 import { Observable,Subscription, interval  } from 'rxjs';
+import { SmsService } from './../services/sms.service';
 
 import { fr } from '../langueSetting/fr';
 import { arabe } from '../langueSetting/arabe';
 import { anglais } from '../langueSetting/anglais';
 import * as _ from 'lodash';
 import { request } from 'http';
+import { SMS } from '../model/sms.model';
+import { stringify } from 'querystring';
 @Component({
   selector: 'app-services',
   templateUrl: './service.component.html',
@@ -20,6 +23,7 @@ export class ServicesComponent implements OnInit {
   private updateSubscription!: Subscription;
   apiURL: string = 'http://wsmobile.expressdisplay.net/v1/compte';
  num_agence:string | null = "";
+ nom_agence:string | null = "";
  idService: string = "";
  ticketResponse : ticketResponse ;
  startDate:any;
@@ -28,23 +32,27 @@ endDate:any;
   services : any []= [];
   lastnum: string = "";
   lasttrait:string="";
-  
+ 
   textsection21:any; textsection22:any;  textsection23:any;
   textsection24:any;  textsection25:any; textsection26:any;   textsection27:any;
   textsection28:any;  textsection29:any; textsection30:any;   textsection31:any;
   textsection32:any;  textsection33:any; textsection34:any;   textsection35:any;
   agence: any;
-
-  /*  request: services; */
-  constructor(
-    private ticketService: TicketService,
-    private agenceService: AgenceService,
-    private location: Location) {
+  
+  numeroticket:  string = "01";
+  id_service: string| null = "";
+  nbattente: string| null = "";
+  msg: string = "";
+  tel: string= "" ;
+  
+  constructor(private ticketService: TicketService, private agenceService: AgenceService, private location: Location,private SmsService:SmsService) {
    this.ticketResponse= {} as ticketResponse;
    this.rdvRequest={} as rdvModel;
-  
+this.boutonClique = localStorage.getItem('boutonClique') === 'true';
+
   }
   ngOnInit(): void {
+   
     this.num_agence = localStorage.getItem('num_agence');
 this.getAgenceServices();
 
@@ -136,20 +144,21 @@ private getAgenceServices(){
 }
 
 async checkAvailability(){
-  //console.log(this.startDate.year+'-'+this.startDate.month+'-'+this.startDate.day,this.endDate)
-
- //this.ticketService.priseRDV(this.startDate.year+'-'+this.startDate.month+'-'+this.startDate.day,this.endDate.year+'-'+this.endDate.month+'-'+this.endDate.day).subscribe((response:any)=>{
-  //  console.log('res',response)
-  //}) 
- const events = [];
- const data =  await  this.ticketService.priseRDV()?.subscribe(res =>{
-  console.log('data',res)
- })
-
-
+  this.ticketService.priseRDV(new Date("2020-12-03"), new Date(), 1, "user1", "expressexpress1+").subscribe((result)=>{
+    console.log(result);
+  })
   }
+  handleClick(button: any) {
+    if (!button.clicked) {
+      button.clicked = true;
+    }}
+  boutonClique: boolean = false;
 
  saveTicket(event:any){
+ this.boutonClique = true;
+  localStorage.setItem('boutonClique', 'true');
+  
+
     const button = event.target;
     this.idService = button.id;
     let request = new ticketModel() ;
@@ -158,13 +167,17 @@ async checkAvailability(){
     request.id_client="123";
     request.id_agence= this.num_agence;
     request.token= "ctKaD7IHbxU:APA91bGoFuaSdhgyRLEi6ofPNP";
-
+   
     this.ticketService.reserveTicket(request).subscribe((response: any) => {
       this.ticketResponse = response.infoticket;
       _.debounce(() => {
-        if(this.ticketResponse){
+       
+        if(this.ticketResponse) {
           console.log('service',this.ticketResponse)
           alert("ticket reserved successfully!");
+
+     //   this.boutonClique = true;
+
         }else {
           alert("Champ(s) requis est (sont) manquant(s) ou vide(s)");
         }
@@ -182,5 +195,33 @@ async checkAvailability(){
   }
 
  
+
+  displayMsg(){
+   
+  
+    this.msg= "Bienvenur a l'agence : "+this.nom_agence+" votre numero de ticket "
+    +this.numeroticket+" au service "+this.id_service+". "+this.nbattente+" en attente. Votre tour est estime a "
+    
+    
+   var request = new SMS() ;
+   request.msg=this.msg;
+   request.tel = "23483701";
+   localStorage.setItem('numTel', this.tel);
+   this.SmsService.sendsms(request).subscribe((response: any) => {
+    this.msg= response.msg;
+    this.tel=response.tel;
+
+    _.debounce(() => {
+      if(this.SmsService){
+        console.log('service',this.SmsService)
+        alert("message envoyée avec succé!");
+      }else {
+        alert("Champ(s) requis est (sont) manquant(s) ou vide(s)");
+      }
+    },300)()
+  })
+  }
+
+
   
 }

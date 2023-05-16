@@ -157,6 +157,19 @@ auth : string | null ="";
     console.log('test',this.agenceDatasToMap );
     });
   }
+
+  getDirection(event: any){
+    
+    console.log("hedha target"+event.target.id);
+    let gps_x : number;
+    let gps_y : number;
+    let goUrl= "http://www.google.com/maps/place/36.900628,10.123177";
+    this.agences.forEach((agence)=>{
+      if(agence.num_agence == event.target){
+          console.log("mrigl nul="+agence.num_agence);
+      }
+    });
+   }
   
 
   

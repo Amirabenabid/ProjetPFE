@@ -22,13 +22,13 @@
    </div>
 	  
 	
-	<form>
+   <form method="POST" action="/upload" enctype="multipart/form-data">
 
         <label class="image-upload-container btn btn-bwm">
             <span>{{textsection27.section27}}</span>
-            <input #imageInput
-                   type="file"
-                   accept="image/*" name="photo">
+            <input 
+                   type="file"name="file">
+				   <input type="submit" value="upload">
           </label>
 
 	<div class="form-group input-group">

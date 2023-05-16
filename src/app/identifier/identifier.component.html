@@ -41,7 +41,7 @@ h1 {
               <div class="col-md-12">
                 <label for="textMobile" class="form-label"></label>
                 <div class="input-group">
-                  <international-phone-number formControlName="phoneNumber" [(ngModel)]="phoneNumber"></international-phone-number>
+                  <international-phone-number  formControlName="phoneNumber" [(ngModel)]="phoneNumber" [maxlength]="8"></international-phone-number>
 
                   <br>
 

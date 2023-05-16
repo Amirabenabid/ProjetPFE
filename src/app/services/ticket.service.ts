@@ -4,6 +4,7 @@ import { apiURL } from './../config';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { ticketModel } from '../model/ticket.model';
+import { Observable } from 'rxjs';
 
 
 
@@ -16,29 +17,35 @@ export class TicketService {
     }
       
 
-     priseRDV(){
-      const httpOptions = {
+     priseRDV(startDate: Date, endDate: Date, top:number, login: string, pwd: string): Observable<any>{
+     /*  const httpOptions = {
         headers: new HttpHeaders(),
-          'Content-Type':  'application/x-www-form-urlencoded',
-          'Authorization': 'Basic ' ,
-          'Username':'test1',
-          'Password':'expressexpress1+',
+          'Content-Type':  'application/x-www-form-urlencoded', 
+          'Authorization': 'Basic' ,
+          'Username':'express',
+          'Password':'express@2023',
           "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "*",
-        "X-Requested-With": "XMLHttpRequest",
-          'Access-Control-Allow-Credentials': true
+          "Access-Control-Allow-Headers": "*",
+          "X-Requested-With": "XMLHttpRequest",
+          'Access-Control-Allow-Credentials': true 
+      }; */
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': 'Basic ' + btoa('express:express@2023')
+        })
       };
-
-
-      try{
-       var response=  this.http.get("http://192.168.1.21/api/v2.0/me/Events",httpOptions);
+      let url = "http://41.231.54.66/wsxchange/v1/getxchange/"+startDate.toISOString()+"/"+endDate.toISOString()+"/"+top+"/"+login+"/"+pwd;
+      return this.http.get(url, httpOptions);
+      /* try{
+       var response=  this.http.get("http://41.231.54.66/wsxchange/v1/getxchange/2023-05-05%2015:00:23/2023-05-15%2015:00:23/1/user1/expressexpress1+",httpOptions);
         console.log('Logged');
         console.log (response);
         return response;
       }catch(error){
         console.log('Erreur',error);
         return null;
-      }
+      } */
        
 
       }

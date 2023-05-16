@@ -22,15 +22,16 @@
          </div> 
          
          <div class="media-body mb-5 text-white">
-              <h4 class="mt-0 mb-0" *ngFor="let profil of profil"> <b>{{this.profil.nomprofil}}</b> <br> <b>{{this.profil.prenomprofil}}</b></h4>
+              <h4 class="mt-0 mb-0"> <b>{{this.profil.nomprofil}}</b> &nbsp; <b>{{this.profil.prenomprofil}}</b></h4>
                <p class="small mb-4"> <i class="fas fa-map-marker-alt mr-2"></i></p> 
              </div> </div> </div>
               <div class="bg-light p-4 d-flex justify-content-end text-center">
                    </div> 
 <br>
-<button type="button" class="btn btn-outline-success"style="margin-left: 10px;padding-left:10px;padding-right:10px"routerLink="/modifier">Modifier Profile</button>
-<button type="button" class="btn btn-outline-danger" style="margin-left: 10px;padding-left:10px;padding-right:10px"routerLink="/ajouter">Ajouter informations</button>
-
+<!-- <button type="button" class="btn btn-outline-success"style="margin-left: 10px;padding-left:10px;padding-right:10px" (click)="update()"routerLink="/modifier">Modifier Profile</button>
+ --><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#ajouter"
+ style="margin-left: 10px;padding-left:10px;padding-right:10px"(click)="add()" >Ajouter informations</button>
+<br><br>
 
 <div class="container">
   <div class="card shadow mb-4">
@@ -42,14 +43,14 @@
   </tr>
   </thead>
 
- <tbody *ngFor="let profil of profil">
+ <tbody >
   <tr><td> {{textsection4.section4}} : </td><td><b>{{this.profil.nomprofil}}</b></td></tr>
   <tr><td>  {{textsection5.section5}} :</td><td><b>{{this.profil.prenomprofil}}</b></td></tr>
   <tr><td> {{textsection6.section6}} :</td> <td> <b>{{this.profil.numtel}}</b></td>
   <tr><td> {{textsection7.section7}} :</td> <td> <b>{{this.profil.email}}</b></td></tr>
-<br>   <tr> <td><a class="btn btn-success" [routerLink]="['/updateprofil',profil.nomprofil]">{{textsection8.section8}}</a></td> 
- <td><a class="btn btn-success" [routerLink]="['/ajoutprofil',profil.nomprofil]">{{textsection9.section9}}</a></td> </tr>
-
+<br> <!--   <tr> <td><a class="btn btn-success" (click)="update()" routerLink="/modifier">{{textsection8.section8}}</a></td> 
+ <td><a class="btn btn-success" (click)="add()" routerLink="/ajouter">{{textsection9.section9}}</a></td> </tr>
+ -->
 
 </tbody>
   </table>
@@ -164,3 +165,77 @@
     </div>
   </div>
   </div>
+
+
+
+  
+
+  <div class="modal fade" id="ajouter" tabindex="-1" role="dialog" aria-labelledby="ajouterLabel" aria-hidden="true">
+
+    <div  class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="table-responsive">
+            <form method="POST" action="/upload" enctype="multipart/form-data">
+
+              <label class="image-upload-container btn btn-bwm">
+                  <span>{{textsection27.section27}}</span>
+                  <input type="file" (change)="onFileSelected($event)">
+                  <button type="submit">Télécharger</button>
+                </label>
+      
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+           </div>
+              <input name="nomprofil" [(ngModel)]="newprofil.nomprofil"class="form-control" placeholder="{{textsection28.section28}}" type="text">
+          </div> <!-- form-group// -->
+          <div class="form-group input-group">
+          <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+           </div>
+              <input name="prenomprofil" [(ngModel)]="newprofil.prenomprofil"class="form-control" placeholder="{{textsection29.section29}}" type="text">
+          </div>
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+           </div>
+              <input name="email"[(ngModel)]="newprofil.email" class="form-control" placeholder="{{textsection30.section30}}" type="email">
+          </div> <!-- form-group// -->
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+          </div>
+          <select class="custom-select" style="max-width: 120px;">
+              <option selected="">+216</option>
+                  <option value="4">+971</option>
+              <option value="1">+972</option>
+              <option value="2">+198</option>
+              <option value="3">+701</option>
+          </select>
+            <input name="numtel"[(ngModel)]="newprofil.numtel" class="form-control" placeholder="{{textsection31.section31}}" type="text">
+          </div> <!-- form-group// -->
+                                         
+          <div class="form-group">
+              <button type="submit"(click)="addprofil()" class="btn btn-primary btn-block" data-dismiss="modal"> {{textsection32.section32}}  </button>
+          </div> <!-- form-group// -->      
+      </form>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">{{textsection19.section19}}</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  
+  
+  
+    
