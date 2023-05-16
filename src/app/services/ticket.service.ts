@@ -75,6 +75,11 @@ return this.http.post("http://wsmobile.expressdisplay.net/v1/reservation",button
         };
   return this.http.get( "http://wsmobile.expressdisplay.net/v1/agence/"+num_agence,httpOptions);  
   }
+  xchangeUrlFinal = "http://41.231.54.66/wsxchange/v1/getxchange/2023-05-05%2015:00:23/2023-05-20%2015:00:23/2/Agence1.RD/expressexpress1+";
+  xchangeUrl = "http://41.231.54.66/wsxchange/v1/getxchange/";
+  checkAvailability(startDate: Date, endDate: Date, top:number, num_agence:string, prefix: string){
+
+  }
 
   /*   consultclient(id: number): Observable<clientModel>{
       return this.http.get<clientModel>(this.apiURL, id,);
