@@ -182,7 +182,7 @@ async checkAvailability(){
 
  async saveTicket(event:any){
  this.boutonClique = true;
-  localStorage.setItem('boutonClique', 'true');
+localStorage.setItem('boutonClique', 'true');
   
 
     const button = event.target;
@@ -203,7 +203,7 @@ async checkAvailability(){
           alert("This service is not available right now");
         }
       }
-    });
+    }); 
    if(isAvailable){
     this.ticketService.reserveTicket(request).subscribe((response: any) => {
       this.ticketResponse = response.infoticket;

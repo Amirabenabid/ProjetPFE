@@ -34,41 +34,6 @@
 <button (click)="setlangueAnglais()" style="background-color: rgb(255, 254, 254);border-color: aliceblue;" type="button">
  <img src="https://as2.ftcdn.net/v2/jpg/00/95/45/61/1000_F_95456103_ZAkq44OVLaX7zHS37aOZumekTyu8RrSq.jpg" height="20" alt=""></button>        
 </div>
-<div style="display: flex;flex-direction: row;justify-content: space-between;align-items: center;">
-<div>
-    <h5>
-      Date Début :
-    </h5>
-    <form class="form-inline">
-      <div class="form-group">
-        <div class="input-group">
-          <input class="form-control" placeholder="yyyy-mm-dd"
-                 name="dp" [(ngModel)]="startDate" ngbDatepicker #d="ngbDatepicker">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-<div>
-  <h5>Date fin :</h5>
-  <form class="form-inline">
-    <div class="form-group">
-      <div class="input-group">
-        <input class="form-control" placeholder="yyyy-mm-dd"
-               name="dp" [(ngModel)]="endDate" ngbDatepicker #dd="ngbDatepicker">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary calendar" (click)="dd.toggle()" type="button"></button>
-        </div>
-      </div>
-    </div>
-  </form>
-</div> 
-<div>
-  <button type="button" (click)="checkAvailability()" class="btn btn-primary">Vérifier disponnibilité</button>
-</div>
-</div>
 
 
 
