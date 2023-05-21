@@ -21,14 +21,15 @@ export class ticketResponse {
    
 }
 
-export class servicesModel{
-    id:number=0;
+
+export class servicesModel {
+    id: number = 0;
+    lastnum:number = 0;
+    lasttrait: string="";
+    nbattente: number=0;
     nom_service:string="";
+    nom_service_ar:string="";
+    nom_service_en:string="";
     prefixe:string="";
-    nom_service_ar="";
-    nom_service_en="";
-    nbattente:string="";
-    lastnum:string="";
-    lasttrait:string="";
-    disabled:boolean=false;
+    disabled:string="";
 }

@@ -9,7 +9,7 @@ import { SmsService } from './../services/sms.service';
 
 import { fr } from '../langueSetting/fr';
 import { arabe } from '../langueSetting/arabe';
-import { anglais } from '../langueSetting/anglais'; 
+import { anglais } from '../langueSetting/anglais';
 import * as _ from 'lodash';
 import { request } from 'http';
 import { SMS } from '../model/sms.model';
@@ -24,10 +24,11 @@ export class ServicesComponent implements OnInit {
   apiURL: string = 'http://wsmobile.expressdisplay.net/v1/compte';
  num_agence:string | null = "";
  nom_agence:string | null = "";
- idService: string = "";
+ idService: number = 0;
  ticketResponse : ticketResponse ;
  startDate:any;
  rdvRequest: rdvModel;
+ serviceIndex:number=0;
 endDate:any;
   services : servicesModel []= [];
   lastnum: string = "";
@@ -48,7 +49,6 @@ endDate:any;
   constructor(private ticketService: TicketService, private agenceService: AgenceService, private location: Location,private SmsService:SmsService) {
    this.ticketResponse= {} as ticketResponse;
    this.rdvRequest={} as rdvModel;
-this.boutonClique = localStorage.getItem('boutonClique') === 'true';
 
   }
   ngOnInit(): void {
@@ -75,7 +75,7 @@ this.updateSubscription = interval(3000).subscribe(
   this.textsection32=fr.service[11];
   this.textsection33=fr.service[12];
   this.textsection34=fr.service[13];
-  console.log('fr',fr.service)
+
 }
 setLangueArabe(){
   localStorage.setItem('lang','1');
@@ -133,94 +133,76 @@ setlangueAnglais(){
 }
  
 private getAgenceServices(){
-  this.agenceService.getAgenceByNum(this.num_agence).subscribe((response:any)=>{
-    this.services = response.agence.services;
-    this.agence = response.agence;
-    console.log(response);
-    if(this.idService)
-    console.log(this.agence.services[this.idService].lastnum);
-    console.log("nbattente :"+response.agence.nbattente);
-    console.log("les services: ");
-    this.services
-        })
-}
+  var item :any = localStorage.getItem('service'+ this.num_agence);
+  if(item){
+  
+this.services = JSON.parse(item).service;
+this.agence = JSON.parse(item).agence;
+  }else {
+    this.agenceService.getAgenceByNum(this.num_agence).subscribe((response:any)=>{
+      this.services = response.agence.services;
+      this.agence = response.agence;
+      for(var i=0; i<this.services.length;i++){
+        this.services[i].disabled = "1";
+      }
+      if(this.idService)
+      console.log(this.agence.services[this.idService].lastnum);
+      console.log("nbattente :"+response.agence.nbattente)
+          })
 
-checkServiceAvailability(prefix: string): boolean{
-  const now = new Date();
-  let afterSe3a = this.addHours(now, 1);
-  let result = false;
-  if (this.num_agence) {
-    this.ticketService.checkAvailability(now, afterSe3a, 3, this.num_agence, prefix).subscribe((exchange)=>{
-      let exch = exchange;
-      exch.infoxchange = [12, 14]
-        if(exchange.infoxchange.length>0){
-          result = false;
-        }else{
-          result = true;
-        }
-    });
+      
   }
-  return result;
 }
- addHours = (date: Date, hours: number): Date => {
-  const result = new Date(date);
-  result.setHours(result.getHours() + hours);
-  return result;
-};
 
 async checkAvailability(){
-  this.ticketService.priseRDV(new Date("2020-12-03"), new Date(), 1, "user1", "expressexpress1+").subscribe((result)=>{
-    console.log(result);
-  });
-  
+  //console.log(this.startDate.year+'-'+this.startDate.month+'-'+this.startDate.day,this.endDate)
+
+ //this.ticketService.priseRDV(this.startDate.year+'-'+this.startDate.month+'-'+this.startDate.day,this.endDate.year+'-'+this.endDate.month+'-'+this.endDate.day).subscribe((response:any)=>{
+  //  console.log('res',response)
+  //}) 
+ const events = [];
+//  const data =  await  this.ticketService.priseRDV().subscribe(res =>{
+
+//  })
+
+
   }
   handleClick(button: any) {
     if (!button.clicked) {
       button.clicked = true;
     }}
-  boutonClique: boolean = false;
+ saveTicket(event:any){
 
- async saveTicket(event:any){
- this.boutonClique = true;
-localStorage.setItem('boutonClique', 'true');
-  
-
+  console.log('agence',this.agence)
     const button = event.target;
     this.idService = button.id;
+    //var serviceIndex = this.services.map(e => e.id).indexOf(this.idService);
+     this.serviceIndex = this.services.findIndex(x => x.id == this.idService);
+
+
+
     let request = new ticketModel() ;
-    request.id_service = this.idService;
+    request.id_service = this.idService.toString();
     request.lang= 1 ;
     request.id_client="123";
     request.id_agence= this.num_agence;
     request.token= "ctKaD7IHbxU:APA91bGoFuaSdhgyRLEi6ofPNP";
-    let isAvailable = true;
-    await this.services.forEach((service)=>{
-      if (service.id.toString() == request.id_service) {
-        console.log("id= "+service.id.toString());
-        console.log("prefiex = "+service.prefixe);
-        if(!this.checkServiceAvailability(service.prefixe)){
-          isAvailable = false;
-          alert("This service is not available right now");
-        }
-      }
-    }); 
-   if(isAvailable){
+   
     this.ticketService.reserveTicket(request).subscribe((response: any) => {
       this.ticketResponse = response.infoticket;
       _.debounce(() => {
        
         if(this.ticketResponse) {
-          console.log('service',this.ticketResponse)
-          alert("ticket reserved successfully!");
 
-     //   this.boutonClique = true;
+      //    alert("ticket reserved successfully!");
+
 
         }else {
           alert("Champ(s) requis est (sont) manquant(s) ou vide(s)");
         }
       },300)()
     })
-   }
+   
   } 
 
 
@@ -235,8 +217,13 @@ localStorage.setItem('boutonClique', 'true');
  
 
   displayMsg(){
-   
-  
+    console.log('test',this.agence.nom_agence)
+    console.log('res',this.ticketResponse)
+      this.services[this.serviceIndex].disabled = "2";
+      var object = {'agence': this.agence, 'service': this.services }
+      localStorage.setItem('service'+ this.num_agence, JSON.stringify(object));
+    
+
     this.msg= "Bienvenur a l'agence : "+this.nom_agence+" votre numero de ticket "
     +this.numeroticket+" au service "+this.id_service+". "+this.nbattente+" en attente. Votre tour est estime a "
     
@@ -251,7 +238,7 @@ localStorage.setItem('boutonClique', 'true');
 
     _.debounce(() => {
       if(this.SmsService){
-        console.log('service',this.SmsService)
+
         alert("message envoyée avec succé!");
       }else {
         alert("Champ(s) requis est (sont) manquant(s) ou vide(s)");

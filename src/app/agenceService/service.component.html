@@ -34,6 +34,41 @@
 <button (click)="setlangueAnglais()" style="background-color: rgb(255, 254, 254);border-color: aliceblue;" type="button">
  <img src="https://as2.ftcdn.net/v2/jpg/00/95/45/61/1000_F_95456103_ZAkq44OVLaX7zHS37aOZumekTyu8RrSq.jpg" height="20" alt=""></button>        
 </div>
+<div style="display: flex;flex-direction: row;justify-content: space-between;align-items: center;">
+<div>
+    <h5>
+      Date Début :
+    </h5>
+    <form class="form-inline">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                 name="dp" [(ngModel)]="startDate" ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+<div>
+  <h5>Date fin :</h5>
+  <form class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd"
+               name="dp" [(ngModel)]="endDate" ngbDatepicker #dd="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="dd.toggle()" type="button"></button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div> 
+<div>
+  <button type="button" (click)="checkAvailability()" class="btn btn-primary">Vérifier disponnibilité</button>
+</div>
+</div>
 
 
 
@@ -53,8 +88,8 @@
 
 <tr *ngFor="let service of services">
 <td><b>{{service.nom_service}}</b></td>
-<td><button id="{{service.id}}" class="btn btn-warning"  type="button"data-toggle="modal" data-target="#confirmer" style="color: black;"
-   (click)="saveTicket($event)" > <!-- *ngIf="!boutonClique" -->
+<td><button attr.id="{{service.id}}"  class="btn btn-warning"  type="button"data-toggle="modal" data-target="#confirmer" style="color: black;"
+   (click)="saveTicket($event)"  [disabled]="service.disabled !== '1'"> 
   {{textsection27.section27}}</button></td>
 <td><b>{{service.prefixe}}</b></td>
 <td>{{service.lastnum}}</td>
@@ -96,7 +131,7 @@
           <label for="textMobile" class="form-label" >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
             <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
-          </svg> <b>{{agence.nbattente}}</b>
+          </svg> <b>{{ticketResponse.nbattente}}</b>
                     
             <label for="textMobile" class="form-label" ><b>&nbsp; Nombre global en attente </b></label><br>
         </label>
@@ -112,7 +147,7 @@
         <label for="textMobile" class="form-label" >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-ticket-detailed-fill" viewBox="0 0 16 16">
             <path d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6V4.5Zm4 1a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5Zm0 5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5ZM4 8a1 1 0 0 0 1 1h6a1 1 0 1 0 0-2H5a1 1 0 0 0-1 1Z"/>
-          </svg> <b *ngIf="!idService" >{{agence.services[idService].lastnum}}</b>
+          </svg> <b *ngIf="idService != null" ></b>
                   
           <label for="textMobile" class="form-label" ><b> Dernier Numero </b></label><br>
       </label>
@@ -120,7 +155,7 @@
       <label for="textMobile" class="form-label" >
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-ticket-detailed-fill" viewBox="0 0 16 16">
           <path d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6V4.5Zm4 1a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5Zm0 5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5ZM4 8a1 1 0 0 0 1 1h6a1 1 0 1 0 0-2H5a1 1 0 0 0-1 1Z"/>
-        </svg> <b *ngIf="idService != null">{{agence.services[idService].lasttrait}}</b>
+        </svg> <b *ngIf="idService != null"></b>
                 
         <label for="textMobile" class="form-label" ><b> Dernier Traitement </b></label><br>
     </label>
@@ -143,9 +178,7 @@
         </label>
       </div>    
       <a href="https://www.expressdisplay.net/en/">
-        <div class="text-center">
-          <img src="https://scontent.ftun14-1.fna.fbcdn.net/v/t39.30808-6/336658669_1221717428780394_2378005335097754632_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_ohc=--P6VWMCLg0AX_beIqH&_nc_ht=scontent.ftun14-1.fna&oh=00_AfDHYV9Ci_nBkG_q9RjavlshO4rPZSBUUMNwESKz76HqBA&oe=64611101" class="card-img-top" alt="...">
-        </div>
+
 
       </a>
         <div class="col-6" class="text-center">
