@@ -230,7 +230,7 @@ async checkAvailability(){
     
    var request = new SMS() ;
    request.msg=this.msg;
-   request.tel = "23483701";
+   request.tel = "";
    localStorage.setItem('numTel', this.tel);
    this.SmsService.sendsms(request).subscribe((response: any) => {
     this.msg= response.msg;
